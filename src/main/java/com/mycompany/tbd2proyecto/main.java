@@ -3,9 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.tbd2proyecto;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.bson.Document;
 /**
  *
  * @author gcano
@@ -19,6 +26,8 @@ public class main extends javax.swing.JFrame {
         conectar = new Conexion("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
         conectar.conectar();
         initComponents();
+        setLocationRelativeTo(this);
+        
         
         
     }
@@ -226,6 +235,11 @@ public class main extends javax.swing.JFrame {
         });
 
         jButton_CrearF.setText("Crear");
+        jButton_CrearF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_CrearFMouseClicked(evt);
+            }
+        });
         jButton_CrearF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_CrearFActionPerformed(evt);
@@ -259,13 +273,14 @@ public class main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearFarmaciaLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
-                        .addComponent(jLabel6)
-                        .addGap(51, 51, 51)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearFarmaciaLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton_CrearF, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(147, 147, 147)))
+                        .addGroup(jDialog_CrearFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearFarmaciaLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(51, 51, 51)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearFarmaciaLayout.createSequentialGroup()
+                                .addComponent(jButton_CrearF, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(147, 147, 147)))))
                 .addGap(34, 34, 34))
         );
         jDialog_CrearFarmaciaLayout.setVerticalGroup(
@@ -1085,7 +1100,8 @@ public class main extends javax.swing.JFrame {
     String nombre = jTextField_Nombre.getText();
     int ID = Integer.parseInt(jTextField_ID.getText());
     Clientes.add(new Cliente(nombre, ID,null));
-    JOptionPane.showMessageDialog(null, "Se ha creado la cuenta Cliente Correctamente");
+    escribirCliente(nombre,ID);
+    JOptionPane.showMessageDialog(jDialog_CrearCliente, "Cliente "+ nombre+" creado exitosamente.");
     }//GEN-LAST:event_jButton_CrearActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
@@ -1113,8 +1129,38 @@ public class main extends javax.swing.JFrame {
     private void jButton_CrearFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearFActionPerformed
         String nombre = jTextField_NombreF.getText(), dir= jTextField_DirF1.getText();
         int ID = Integer.parseInt(jTextField_IDF.getText());
-        Farmacias.add(new Farmacia(nombre, ID, nombre, null, null, null));
-        JOptionPane.showMessageDialog(null, "Se ha creado la cuenta de Farmacia Correctamente");
+        //agregar propietarios y farmacuitcos
+        ArrayList<Integer> props = new ArrayList();
+        ArrayList<Integer> farms = new ArrayList();
+         int response;
+        //propietarios
+        do {
+            String nombreprop = JOptionPane.showInputDialog(jDialog_CrearFarmacia, "Ingrese nombre de propietario");
+            String IDprop = JOptionPane.showInputDialog(jDialog_CrearFarmacia, "Ingrese ID de propietario");
+            props.add(Integer.parseInt(IDprop));
+            
+            pro.add(new Propietario(Integer.parseInt(IDprop),nombreprop));
+            escribirPropietario(nombreprop,Integer.parseInt(IDprop));
+            //agregar propietario
+            
+            response = JOptionPane.showConfirmDialog(jDialog_CrearFarmacia, "Desea agrear a otro propietario?", "Propietarios", JOptionPane.YES_NO_OPTION);
+            
+        } while (response == JOptionPane.YES_OPTION);
+        //farmaceuticos
+        do {
+            String nombreprop = JOptionPane.showInputDialog(jDialog_CrearFarmacia, "Ingrese nombre de Farmaceutico");
+            String IDprop = JOptionPane.showInputDialog(jDialog_CrearFarmacia, "Ingrese ID de Farmaceutico");
+            farms.add(Integer.parseInt(IDprop));
+            far.add(new Farmaceutico(Integer.parseInt(IDprop),nombreprop));
+            escribirFarmaceutico(nombreprop,Integer.parseInt(IDprop));
+            response = JOptionPane.showConfirmDialog(jDialog_CrearFarmacia, "Desea agrear a otro farmaceutico?", "Farmaceutico", JOptionPane.YES_NO_OPTION);
+            
+        } while (response == JOptionPane.YES_OPTION);
+        escribirFarmacias(nombre, ID, dir,farms, props);
+        //Farmacias.add(e)
+        
+        
+       
     }//GEN-LAST:event_jButton_CrearFActionPerformed
 
     private void jTextField_DirF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_DirF1ActionPerformed
@@ -1136,9 +1182,10 @@ public class main extends javax.swing.JFrame {
 
     private void jButton_CrearF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF1ActionPerformed
         String nombre = jTextField_NombreF.getText(), dir= jTextField_DirF1.getText(), contacto=jTextField_ContactoL.getText();
-        int ID = Integer.parseInt(jTextField_IDF.getSelectedText());
-        Laboratorios.add(new Laboratorio(ID, dir, contacto, nombre, null));
-        JOptionPane.showMessageDialog(null, "Se ha creado la cuenta del Laboratorio Correctamente");
+        int ID = Integer.parseInt(jTextField_IDL.getText());
+        Laboratorios.add(new Laboratorio(ID, dir, contacto, nombre));
+        escrbirLaboratorio(nombre, ID,dir, contacto);
+        JOptionPane.showMessageDialog(jDialog_CrearLaboratorio, "Se ha creado la cuenta del Laboratorio Correctamente");
     }//GEN-LAST:event_jButton_CrearF1ActionPerformed
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
@@ -1186,16 +1233,24 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_IDLogInFActionPerformed
 
     private void jButton_CrearF3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF3ActionPerformed
+        int cont = 0;
+        Farmacias.add(0,new Farmacia("admin",1212,"admin"));
+        for (Farmacia Cliente1 :Farmacias) {
+            System.out.println(Cliente1.getNombre()+Cliente1.getId());
+        }
         String nombre = jTextField_NombreLogInF.getText();
         int ID = Integer.parseInt( jTextField_IDLogInF.getText());
         for (Farmacia f : Farmacias) {
             if(f.getNombre().equals(nombre)&& f.getId()==ID ){
                 jDialog_LogInFarmacia.setVisible(false);
+                cont++;
                 
-            }else{
-                JOptionPane.showMessageDialog(null, "La farmacia no esta Resgitrada");
             }
         }
+        if(cont == Farmacias.size()){
+            System.out.println("no esta registrada");
+        }
+        
     }//GEN-LAST:event_jButton_CrearF3ActionPerformed
 
     private void jTextField_IDLogInLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_IDLogInLActionPerformed
@@ -1306,7 +1361,207 @@ public class main extends javax.swing.JFrame {
         }
         jTable2.setModel(model);
     }//GEN-LAST:event_jComboBox3ActionPerformed
+    public void escribirFarmacias(String nombre, int ID, String dir,ArrayList<Integer> farm, ArrayList<Integer> prop){
+        //agregar propietarios y farmacuitcos
+        
+        //Farmacias.add(new Farmacia(nombre, ID, dir, null, null, null));
+        JOptionPane.showMessageDialog(null, "Se ha creado la cuenta de Farmacia Correctamente");
+         try {
+            mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+            db = mongoClient.getDatabase("Farmacia");
+            collection = db.getCollection("Farmacia");
+            System.out.println("Connected to MongoDB");
 
+            
+           
+           
+            Farmacias.add(new Farmacia(nombre, ID, dir, prop,farm));
+          
+
+          
+            
+                Document farmaciaDoc = new Document("id", ID)
+                        .append("nombre", nombre)
+                        .append("direccion", dir)
+                        .append("Propietarios", prop)
+                        .append("Farmaceuticos",farm)
+                        .append("productos",null);
+                collection.insertOne(farmaciaDoc);  
+            
+
+            System.out.println("All Farmacias inserted successfully!");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            
+            if (mongoClient != null) {
+                mongoClient.close();
+                System.out.println("Disconnected from MongoDB");
+            }
+        }
+    }
+    public  void readFarmacias() {
+       
+
+        try {
+            
+            mongoClient = MongoClients.create("linkconec");
+            db = mongoClient.getDatabase("Farmacia");
+            collection = db.getCollection("farmacias");
+            System.out.println("Connected to MongoDB");
+
+            
+            MongoCursor<Document> cursor = collection.find().iterator();
+
+            while (cursor.hasNext()) {
+                Document doc = cursor.next();
+
+                
+                String nombre = doc.getString("nombre");
+                int id = doc.getInteger("id");
+                String direccion = doc.getString("direccion");
+
+               
+                ArrayList<Integer> propietarios = (ArrayList<Integer>) doc.get("Propietarios");
+                ArrayList<Integer> farmaceuticos = (ArrayList<Integer>) doc.get("Farmaceuticos");
+                
+
+             
+                Farmacia farmacia = new Farmacia(nombre, id, direccion, propietarios, farmaceuticos);
+                Farmacias.add(farmacia);  
+            }
+
+            cursor.close();
+            System.out.println("All Farmacias read successfully!");
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            if (mongoClient != null) {
+                mongoClient.close();
+                System.out.println("Disconnected from MongoDB");
+            }
+        }
+
+        
+    
+}
+    public void escribirPropietario(String nombre, int ID){
+        //Farmacias.add(new Farmacia(nombre, ID, dir, null, null, null));
+        
+         try {
+            mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+            db = mongoClient.getDatabase("Farmacia");
+            collection = db.getCollection("Propietario");
+            System.out.println("Connected to MongoDB");
+
+            // Create and populate an ArrayList of Farmacia objects
+           
+            //Farmacias.add(new Farmacia(1, "123 Main St", new ArrayList<>(List.of(101, 102)), new ArrayList<>(List.of(201, 202))));
+            
+            // Add more Farmacia objects as needed
+
+            // Insert each Farmacia object as a document
+            
+                Document proDoc = new Document("id", ID)
+                        .append("nombre", nombre);
+                        
+                collection.insertOne(proDoc);  
+            
+
+            System.out.println("All Propietarios inserted successfully!");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            
+            if (mongoClient != null) {
+                mongoClient.close();
+                System.out.println("Disconnected from MongoDB");
+            }
+        }
+    }
+     public void escribirFarmaceutico(String nombre, int ID){
+        //Farmacias.add(new Farmacia(nombre, ID, dir, null, null, null));
+        
+         try {
+            mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+            db = mongoClient.getDatabase("Farmacia");
+            collection = db.getCollection("Farmaceutico");
+            System.out.println("Connected to MongoDB");
+
+            
+            
+                Document pfroDoc = new Document("id", ID)
+                        .append("nombre", nombre);
+                        
+                collection.insertOne(pfroDoc);  
+            
+
+            System.out.println("All farms inserted successfully!");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            
+            if (mongoClient != null) {
+                mongoClient.close();
+                System.out.println("Disconnected from MongoDB");
+            }
+        }
+    }
+     public void escribirCliente(String nombre, int ID){
+          try {
+            mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+            db = mongoClient.getDatabase("Farmacia");
+            collection = db.getCollection("Cliente");
+            System.out.println("Connected to MongoDB");
+
+            
+            
+                Document pfroDoc = new Document("id", ID)
+                        .append("nombre", nombre);
+                        
+                collection.insertOne(pfroDoc);  
+            
+
+            System.out.println("All Clientes inserted successfully!");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            
+            if (mongoClient != null) {
+                mongoClient.close();
+                System.out.println("Disconnected from MongoDB");
+            }
+        }
+     }
+     public void escrbirLaboratorio(String nombre,int  ID,String dir,String contacto){
+          try {
+            mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+            db = mongoClient.getDatabase("Farmacia");
+            collection = db.getCollection("Laboratorio");
+            System.out.println("Connected to MongoDB");
+
+            
+            
+                Document pfroDoc = new Document("id", ID)
+                        .append("nombre", nombre)
+                        .append("direccion", dir)
+                        .append("contacto", contacto);
+                        
+                collection.insertOne(pfroDoc);  
+            
+
+            System.out.println("All labs inserted successfully!");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            
+            if (mongoClient != null) {
+                mongoClient.close();
+                System.out.println("Disconnected from MongoDB");
+            }
+        }
+     }
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         jDialog_Farmacia.setVisible(false);
         jDialog_LogInFarmacia.setVisible(true);
@@ -1314,6 +1569,10 @@ public class main extends javax.swing.JFrame {
         jDialog_LogInFarmacia.pack();
         jDialog_LogInFarmacia.setLocationRelativeTo(this);
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton_CrearFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_CrearFMouseClicked
+      
+    }//GEN-LAST:event_jButton_CrearFMouseClicked
 
     
     /**
@@ -1448,6 +1707,14 @@ public class main extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
  Conexion conectar = new Conexion("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
     ArrayList<Cliente> Clientes = new ArrayList<>();
+    
     ArrayList<Farmacia> Farmacias = new ArrayList<>();
     ArrayList<Laboratorio> Laboratorios= new ArrayList<>();
+    ArrayList<Propietario> pro = new ArrayList();
+    ArrayList<Farmaceutico> far = new ArrayList();
+    private static MongoClient mongoClient;
+    private static MongoDatabase db;
+    private static MongoCollection<Document> collection;
+     
+    
 }

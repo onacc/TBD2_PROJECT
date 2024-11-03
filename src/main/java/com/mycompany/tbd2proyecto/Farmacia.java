@@ -18,6 +18,21 @@ public class Farmacia {
     ArrayList<Integer> Farmaceuticos;
     ArrayList<Producto> inventario;
 
+    public Farmacia(String nombre, int id, String direccion) {
+        this.nombre = nombre;
+        this.id = id;
+        this.direccion = direccion;
+    }
+
+    public Farmacia(String nombre, int id, String direccion, ArrayList<Integer> Propietarios, ArrayList<Integer> Farmaceuticos) {
+        this.nombre = nombre;
+        this.id = id;
+        this.direccion = direccion;
+        this.Propietarios = Propietarios;
+        this.Farmaceuticos = Farmaceuticos;
+    }
+    
+
     public Farmacia(String nombre, int id, String direccion, ArrayList<Integer> Propietarios, ArrayList<Integer> Farmaceuticos, ArrayList<Producto> inventario) {
         this.nombre = nombre;
         this.id = id;

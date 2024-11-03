@@ -12,7 +12,7 @@ public class Farmaceutico {
     String nombre;
     int id;
 
-    public Farmaceutico(String nombre, int id) {
+    public Farmaceutico(int id, String nombre) {
         this.nombre = nombre;
         this.id = id;
     }

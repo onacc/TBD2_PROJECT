@@ -14,6 +14,13 @@ public class Laboratorio {
     int id;
     String direccion ,contact,nombre;
 
+    public Laboratorio(int id, String direccion, String contact, String nombre) {
+        this.id = id;
+        this.direccion = direccion;
+        this.contact = contact;
+        this.nombre = nombre;
+    }
+
     public String getNombre() {
         return nombre;
     }
