@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.tbd2proyecto;
-
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author gcano
@@ -30,10 +32,969 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog_CrearCliente = new javax.swing.JDialog();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField_Nombre = new javax.swing.JTextField();
+        jTextField_ID = new javax.swing.JTextField();
+        jButton_Crear = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jDialog_CrearFarmacia = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField_NombreF = new javax.swing.JTextField();
+        jTextField_IDF = new javax.swing.JTextField();
+        jButton_CrearF = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField_DirF1 = new javax.swing.JTextField();
+        jDialog_CrearLaboratorio = new javax.swing.JDialog();
+        jTextField_DirL = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField_NombreL = new javax.swing.JTextField();
+        jTextField_IDL = new javax.swing.JTextField();
+        jButton_CrearF1 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField_ContactoL = new javax.swing.JTextField();
+        jDialog_LogInCliente = new javax.swing.JDialog();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField_NombreLogInC = new javax.swing.JTextField();
+        jTextField_IDLogInC = new javax.swing.JTextField();
+        jButton_CrearF2 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jDialog_LogInFarmacia = new javax.swing.JDialog();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jTextField_NombreLogInF = new javax.swing.JTextField();
+        jTextField_IDLogInF = new javax.swing.JTextField();
+        jButton_CrearF3 = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jDialog_LogInLaboratorio = new javax.swing.JDialog();
+        jTextField_IDLogInL = new javax.swing.JTextField();
+        jButton_CrearF4 = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jTextField_NombreLogInL = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jDialog_ComprarCliente = new javax.swing.JDialog();
+        jButton4 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel27 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton8 = new javax.swing.JButton();
+        jDialog_Farmacia = new javax.swing.JDialog();
+        jButton11 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton12 = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jLabel35 = new javax.swing.JLabel();
+        jDialog_Laboratorio = new javax.swing.JDialog();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jTextField_NombreP = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jTextField_IDP = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jTextField_UnidadesP = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jTextField_CostoP = new javax.swing.JTextField();
+        jTextField_FamiliaP = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton_Cliente = new javax.swing.JButton();
+        jButton_Farmacia = new javax.swing.JButton();
+        jButton_Laboratorio = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+
+        jDialog_CrearCliente.setPreferredSize(new java.awt.Dimension(538, 420));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Ingrese su Nombre");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setText("Ingrese su ID");
+
+        jTextField_ID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_IDActionPerformed(evt);
+            }
+        });
+
+        jButton_Crear.setText("Crear");
+        jButton_Crear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CrearActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel4.setText("Crear Cliente");
+
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setText("X");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog_CrearClienteLayout = new javax.swing.GroupLayout(jDialog_CrearCliente.getContentPane());
+        jDialog_CrearCliente.getContentPane().setLayout(jDialog_CrearClienteLayout);
+        jDialog_CrearClienteLayout.setHorizontalGroup(
+            jDialog_CrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_CrearClienteLayout.createSequentialGroup()
+                .addGroup(jDialog_CrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_CrearClienteLayout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addGroup(jDialog_CrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
+                            .addComponent(jTextField_ID)))
+                    .addGroup(jDialog_CrearClienteLayout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(jButton_Crear, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(51, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearClienteLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(51, 51, 51)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+        jDialog_CrearClienteLayout.setVerticalGroup(
+            jDialog_CrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_CrearClienteLayout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(jDialog_CrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jButton_Crear, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel6.setText("Crear Farmacia");
+
+        jButton2.setBackground(new java.awt.Color(255, 51, 51));
+        jButton2.setText("X");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setText("Ingrese el nombre de la Farmacia");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setText("Ingrese el ID de la Farmacia");
+
+        jTextField_IDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_IDFActionPerformed(evt);
+            }
+        });
+
+        jButton_CrearF.setText("Crear");
+        jButton_CrearF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CrearFActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel9.setText("Ingrese la direccion de la Farmacia");
+
+        jTextField_DirF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_DirF1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog_CrearFarmaciaLayout = new javax.swing.GroupLayout(jDialog_CrearFarmacia.getContentPane());
+        jDialog_CrearFarmacia.getContentPane().setLayout(jDialog_CrearFarmaciaLayout);
+        jDialog_CrearFarmaciaLayout.setHorizontalGroup(
+            jDialog_CrearFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearFarmaciaLayout.createSequentialGroup()
+                .addContainerGap(65, Short.MAX_VALUE)
+                .addGroup(jDialog_CrearFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_CrearFarmaciaLayout.createSequentialGroup()
+                        .addGroup(jDialog_CrearFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField_NombreF)
+                            .addComponent(jTextField_IDF)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_DirF1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearFarmaciaLayout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jLabel6)
+                        .addGap(51, 51, 51)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearFarmaciaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton_CrearF, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(147, 147, 147)))
+                .addGap(34, 34, 34))
+        );
+        jDialog_CrearFarmaciaLayout.setVerticalGroup(
+            jDialog_CrearFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_CrearFarmaciaLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jDialog_CrearFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_NombreF, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_IDF, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_DirF1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton_CrearF, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        jTextField_DirL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_DirLActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel10.setText("Crear Laboratorio");
+
+        jButton3.setBackground(new java.awt.Color(255, 51, 51));
+        jButton3.setText("X");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel11.setText("Ingrese el nombre del Laboratorio");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel12.setText("Ingrese el ID del Laboratorio");
+
+        jTextField_IDL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_IDLActionPerformed(evt);
+            }
+        });
+
+        jButton_CrearF1.setText("Crear");
+        jButton_CrearF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CrearF1ActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel13.setText("Ingrese la direccion del Laboratorio");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel16.setText("Ingrese el contacto del Laboratorio");
+
+        jTextField_ContactoL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_ContactoLActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog_CrearLaboratorioLayout = new javax.swing.GroupLayout(jDialog_CrearLaboratorio.getContentPane());
+        jDialog_CrearLaboratorio.getContentPane().setLayout(jDialog_CrearLaboratorioLayout);
+        jDialog_CrearLaboratorioLayout.setHorizontalGroup(
+            jDialog_CrearLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearLaboratorioLayout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addGroup(jDialog_CrearLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearLaboratorioLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel10)
+                        .addGap(51, 51, 51)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearLaboratorioLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton_CrearF1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(147, 147, 147))
+                    .addGroup(jDialog_CrearLaboratorioLayout.createSequentialGroup()
+                        .addGroup(jDialog_CrearLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField_NombreL)
+                            .addComponent(jTextField_IDL)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_DirL)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_ContactoL, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(31, 31, 31))
+        );
+        jDialog_CrearLaboratorioLayout.setVerticalGroup(
+            jDialog_CrearLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_CrearLaboratorioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialog_CrearLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_NombreL, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_IDL, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_ContactoL, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_DirL, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton_CrearF1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel17.setText("Log In Cliente");
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel18.setText("Ingrese su Nombre");
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel19.setText("Ingrese su ID");
+
+        jTextField_IDLogInC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_IDLogInCActionPerformed(evt);
+            }
+        });
+
+        jButton_CrearF2.setText("Ingresar");
+        jButton_CrearF2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CrearF2ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setBackground(new java.awt.Color(255, 51, 51));
+        jButton5.setText("X");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog_LogInClienteLayout = new javax.swing.GroupLayout(jDialog_LogInCliente.getContentPane());
+        jDialog_LogInCliente.getContentPane().setLayout(jDialog_LogInClienteLayout);
+        jDialog_LogInClienteLayout.setHorizontalGroup(
+            jDialog_LogInClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LogInClienteLayout.createSequentialGroup()
+                .addContainerGap(194, Short.MAX_VALUE)
+                .addComponent(jLabel17)
+                .addGap(90, 90, 90)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+            .addGroup(jDialog_LogInClienteLayout.createSequentialGroup()
+                .addGroup(jDialog_LogInClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_LogInClienteLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jDialog_LogInClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_NombreLogInC, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                            .addComponent(jTextField_IDLogInC)))
+                    .addGroup(jDialog_LogInClienteLayout.createSequentialGroup()
+                        .addGap(216, 216, 216)
+                        .addComponent(jButton_CrearF2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jDialog_LogInClienteLayout.setVerticalGroup(
+            jDialog_LogInClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_LogInClienteLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jDialog_LogInClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_LogInClienteLayout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(0, 6, Short.MAX_VALUE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_NombreLogInC, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_IDLogInC, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jButton_CrearF2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel20.setText("Ingrese el Nombre de la Farmacia");
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel21.setText("Ingrese el ID de la Farmacia");
+
+        jTextField_IDLogInF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_IDLogInFActionPerformed(evt);
+            }
+        });
+
+        jButton_CrearF3.setText("Ingresar");
+        jButton_CrearF3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CrearF3ActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel22.setText("Log In Farmacia");
+
+        jButton6.setBackground(new java.awt.Color(255, 51, 51));
+        jButton6.setText("X");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog_LogInFarmaciaLayout = new javax.swing.GroupLayout(jDialog_LogInFarmacia.getContentPane());
+        jDialog_LogInFarmacia.getContentPane().setLayout(jDialog_LogInFarmaciaLayout);
+        jDialog_LogInFarmaciaLayout.setHorizontalGroup(
+            jDialog_LogInFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LogInFarmaciaLayout.createSequentialGroup()
+                .addContainerGap(126, Short.MAX_VALUE)
+                .addComponent(jLabel22)
+                .addGap(69, 69, 69)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
+            .addGroup(jDialog_LogInFarmaciaLayout.createSequentialGroup()
+                .addGroup(jDialog_LogInFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_LogInFarmaciaLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jDialog_LogInFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_NombreLogInF, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                            .addComponent(jTextField_IDLogInF)))
+                    .addGroup(jDialog_LogInFarmaciaLayout.createSequentialGroup()
+                        .addGap(216, 216, 216)
+                        .addComponent(jButton_CrearF3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jDialog_LogInFarmaciaLayout.setVerticalGroup(
+            jDialog_LogInFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_LogInFarmaciaLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jDialog_LogInFarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel22)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_NombreLogInF, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_IDLogInF, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addComponent(jButton_CrearF3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+
+        jTextField_IDLogInL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_IDLogInLActionPerformed(evt);
+            }
+        });
+
+        jButton_CrearF4.setText("Ingresar");
+        jButton_CrearF4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CrearF4ActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel23.setText("Log In Laboratorio");
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel24.setText("Ingrese el Nombre del Laboratorio");
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel25.setText("Ingrese el ID del Laboratorio");
+
+        jButton7.setBackground(new java.awt.Color(255, 51, 51));
+        jButton7.setText("X");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog_LogInLaboratorioLayout = new javax.swing.GroupLayout(jDialog_LogInLaboratorio.getContentPane());
+        jDialog_LogInLaboratorio.getContentPane().setLayout(jDialog_LogInLaboratorioLayout);
+        jDialog_LogInLaboratorioLayout.setHorizontalGroup(
+            jDialog_LogInLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_LogInLaboratorioLayout.createSequentialGroup()
+                .addGroup(jDialog_LogInLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_LogInLaboratorioLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jDialog_LogInLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_NombreLogInL, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                            .addComponent(jTextField_IDLogInL)))
+                    .addGroup(jDialog_LogInLaboratorioLayout.createSequentialGroup()
+                        .addGap(216, 216, 216)
+                        .addComponent(jButton_CrearF4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LogInLaboratorioLayout.createSequentialGroup()
+                .addGap(0, 159, Short.MAX_VALUE)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+        );
+        jDialog_LogInLaboratorioLayout.setVerticalGroup(
+            jDialog_LogInLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_LogInLaboratorioLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jDialog_LogInLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel23)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_NombreLogInL, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_IDLogInL, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(jButton_CrearF4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+
+        jButton4.setText("Comprar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel26.setText("Compra de Clientes");
+
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel27.setText("Elije una Farmacia");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "ID", "Unidades", "Precio", "Fabricante", "Familia"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+            jTable1.getColumnModel().getColumn(5).setResizable(false);
+        }
+
+        jButton8.setBackground(new java.awt.Color(255, 51, 51));
+        jButton8.setText("X");
+
+        javax.swing.GroupLayout jDialog_ComprarClienteLayout = new javax.swing.GroupLayout(jDialog_ComprarCliente.getContentPane());
+        jDialog_ComprarCliente.getContentPane().setLayout(jDialog_ComprarClienteLayout);
+        jDialog_ComprarClienteLayout.setHorizontalGroup(
+            jDialog_ComprarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_ComprarClienteLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jDialog_ComprarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_ComprarClienteLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialog_ComprarClienteLayout.createSequentialGroup()
+                        .addGroup(jDialog_ComprarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jDialog_ComprarClienteLayout.createSequentialGroup()
+                                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44))
+        );
+        jDialog_ComprarClienteLayout.setVerticalGroup(
+            jDialog_ComprarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_ComprarClienteLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jDialog_ComprarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jDialog_ComprarClienteLayout.createSequentialGroup()
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jDialog_ComprarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)))
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jDialog_ComprarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        jButton11.setBackground(new java.awt.Color(255, 51, 51));
+        jButton11.setText("X");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "ID", "Unidades", "Precio", "Fabricante", "Familia"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setResizable(false);
+            jTable2.getColumnModel().getColumn(1).setResizable(false);
+            jTable2.getColumnModel().getColumn(2).setResizable(false);
+            jTable2.getColumnModel().getColumn(3).setResizable(false);
+            jTable2.getColumnModel().getColumn(4).setResizable(false);
+            jTable2.getColumnModel().getColumn(5).setResizable(false);
+        }
+
+        jButton12.setText("Comprar");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel32.setText("Compra a Laboratorios");
+
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel35.setText("Elije una Laboratorio");
+
+        javax.swing.GroupLayout jDialog_FarmaciaLayout = new javax.swing.GroupLayout(jDialog_Farmacia.getContentPane());
+        jDialog_Farmacia.getContentPane().setLayout(jDialog_FarmaciaLayout);
+        jDialog_FarmaciaLayout.setHorizontalGroup(
+            jDialog_FarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_FarmaciaLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jDialog_FarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_FarmaciaLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialog_FarmaciaLayout.createSequentialGroup()
+                        .addGroup(jDialog_FarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jDialog_FarmaciaLayout.createSequentialGroup()
+                                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44))
+        );
+        jDialog_FarmaciaLayout.setVerticalGroup(
+            jDialog_FarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_FarmaciaLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jDialog_FarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jDialog_FarmaciaLayout.createSequentialGroup()
+                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jDialog_FarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)))
+                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jDialog_FarmaciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        jButton9.setBackground(new java.awt.Color(255, 51, 51));
+        jButton9.setText("X");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("Agregar");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel28.setText("Agregar producto a Laboratorio");
+
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel29.setText("Elije un laboratorio");
+
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel30.setText("Ingrese el nombre del producto");
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel31.setText("Ingrese el ID del producto");
+
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel33.setText("Ingrese las unidades del producto");
+
+        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel34.setText("Ingrese el costo del Producto");
+
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel36.setText("Familia del Producto");
+
+        javax.swing.GroupLayout jDialog_LaboratorioLayout = new javax.swing.GroupLayout(jDialog_Laboratorio.getContentPane());
+        jDialog_Laboratorio.getContentPane().setLayout(jDialog_LaboratorioLayout);
+        jDialog_LaboratorioLayout.setHorizontalGroup(
+            jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_LaboratorioLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_LaboratorioLayout.createSequentialGroup()
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField_NombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jDialog_LaboratorioLayout.createSequentialGroup()
+                        .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDialog_LaboratorioLayout.createSequentialGroup()
+                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LaboratorioLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LaboratorioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LaboratorioLayout.createSequentialGroup()
+                        .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LaboratorioLayout.createSequentialGroup()
+                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField_IDP, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LaboratorioLayout.createSequentialGroup()
+                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField_UnidadesP, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LaboratorioLayout.createSequentialGroup()
+                                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField_CostoP, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LaboratorioLayout.createSequentialGroup()
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_LaboratorioLayout.createSequentialGroup()
+                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField_FamiliaP, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        jDialog_LaboratorioLayout.setVerticalGroup(
+            jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_LaboratorioLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jDialog_LaboratorioLayout.createSequentialGroup()
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)))
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_NombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_IDP, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_UnidadesP, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_CostoP, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_LaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField_FamiliaP, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Log in");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 36)); // NOI18N
+        jLabel1.setText("Escoja como quiere Ingresar");
+
+        jButton_Cliente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton_Cliente.setText("Cliente");
+        jButton_Cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ClienteActionPerformed(evt);
+            }
+        });
+
+        jButton_Farmacia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton_Farmacia.setText("Farmacia");
+        jButton_Farmacia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_FarmaciaActionPerformed(evt);
+            }
+        });
+
+        jButton_Laboratorio.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton_Laboratorio.setText("Laboratorio");
+        jButton_Laboratorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_LaboratorioActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel5.setText("Crear Cuenta Farmacia");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+
+        jLabel14.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel14.setText("Crear Cuenta Cliente");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+
+        jLabel15.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel15.setText("Crear Cuenta Laboratorio");
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
             }
         });
 
@@ -41,11 +1002,48 @@ public class main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(jButton_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(64, 64, 64))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel14)
+                                .addGap(74, 74, 74)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel15))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton_Farmacia, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(62, 62, 62)
+                                .addComponent(jButton_Laboratorio, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel1)
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_Farmacia, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_Laboratorio, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -55,6 +1053,267 @@ public class main extends javax.swing.JFrame {
         conectar.disconnect();
     }//GEN-LAST:event_formWindowClosed
 
+    private void jButton_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ClienteActionPerformed
+        this.setVisible(false);
+        jDialog_LogInCliente.setVisible(true);
+        jDialog_LogInCliente.setModal(true);
+        jDialog_LogInCliente.pack();
+        jDialog_LogInCliente.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jButton_ClienteActionPerformed
+
+    private void jButton_FarmaciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_FarmaciaActionPerformed
+        this.setVisible(false);
+        jDialog_LogInFarmacia.setVisible(true);
+        jDialog_LogInFarmacia.setModal(true);
+        jDialog_LogInFarmacia.pack();
+        jDialog_LogInFarmacia.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jButton_FarmaciaActionPerformed
+
+    private void jButton_LaboratorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LaboratorioActionPerformed
+        this.setVisible(false);
+        jDialog_LogInLaboratorio.setVisible(true);
+        jDialog_LogInLaboratorio.setModal(true);
+        jDialog_LogInLaboratorio.pack();
+        jDialog_LogInLaboratorio.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jButton_LaboratorioActionPerformed
+
+    private void jTextField_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_IDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_IDActionPerformed
+
+    private void jButton_CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearActionPerformed
+    String nombre = jTextField_Nombre.getText();
+    int ID = Integer.parseInt(jTextField_ID.getText());
+    Clientes.add(new Cliente(nombre, ID,null));
+    JOptionPane.showMessageDialog(null, "Se ha creado la cuenta Cliente Correctamente");
+    }//GEN-LAST:event_jButton_CrearActionPerformed
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+       this.setVisible(false);
+       jDialog_CrearFarmacia.setVisible(true);
+       jDialog_CrearFarmacia.setModal(true);
+       jDialog_CrearFarmacia.pack();
+       jDialog_CrearFarmacia.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       this.setVisible(true);
+       jDialog_CrearCliente.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       this.setVisible(true);
+       jDialog_CrearFarmacia.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField_IDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_IDFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_IDFActionPerformed
+
+    private void jButton_CrearFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearFActionPerformed
+        String nombre = jTextField_NombreF.getText(), dir= jTextField_DirF1.getText();
+        int ID = Integer.parseInt(jTextField_IDF.getText());
+        Farmacias.add(new Farmacia(nombre, ID, nombre, null, null, null));
+        JOptionPane.showMessageDialog(null, "Se ha creado la cuenta de Farmacia Correctamente");
+    }//GEN-LAST:event_jButton_CrearFActionPerformed
+
+    private void jTextField_DirF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_DirF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_DirF1ActionPerformed
+
+    private void jTextField_DirLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_DirLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_DirLActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.setVisible(true);
+        jDialog_CrearLaboratorio.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField_IDLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_IDLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_IDLActionPerformed
+
+    private void jButton_CrearF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF1ActionPerformed
+        String nombre = jTextField_NombreF.getText(), dir= jTextField_DirF1.getText(), contacto=jTextField_ContactoL.getText();
+        int ID = Integer.parseInt(jTextField_IDF.getSelectedText());
+        Laboratorios.add(new Laboratorio(ID, dir, contacto, nombre, null));
+        JOptionPane.showMessageDialog(null, "Se ha creado la cuenta del Laboratorio Correctamente");
+    }//GEN-LAST:event_jButton_CrearF1ActionPerformed
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        this.setVisible(false);
+        jDialog_CrearCliente.setVisible(true);
+       jDialog_CrearCliente.setModal(true);
+       jDialog_CrearCliente.pack();
+       jDialog_CrearCliente.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        this.setVisible(false);
+        jDialog_CrearLaboratorio.setVisible(true);
+       jDialog_CrearLaboratorio.setModal(true);
+       jDialog_CrearLaboratorio.pack();
+       jDialog_CrearLaboratorio.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void jTextField_ContactoLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_ContactoLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_ContactoLActionPerformed
+
+    private void jTextField_IDLogInCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_IDLogInCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_IDLogInCActionPerformed
+
+    private void jButton_CrearF2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF2ActionPerformed
+        String nombre = jTextField_NombreLogInC.getText();
+        int ID = Integer.parseInt( jTextField_IDLogInC.getText());
+        for (Cliente Cliente1 : Clientes) {
+            if(Cliente1.getNombre().equals(nombre)&& Cliente1.getId()==ID ){
+                jDialog_LogInCliente.setVisible(false);
+                jDialog_ComprarCliente.setVisible(true);
+                jDialog_ComprarCliente.setModal(true);
+                jDialog_ComprarCliente.pack();
+                jDialog_ComprarCliente.setLocationRelativeTo(this);
+            }else{
+                JOptionPane.showMessageDialog(null, "El usuario no esta registrado");
+            }
+        }
+    }//GEN-LAST:event_jButton_CrearF2ActionPerformed
+
+    private void jTextField_IDLogInFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_IDLogInFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_IDLogInFActionPerformed
+
+    private void jButton_CrearF3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF3ActionPerformed
+        String nombre = jTextField_NombreLogInF.getText();
+        int ID = Integer.parseInt( jTextField_IDLogInF.getText());
+        for (Farmacia f : Farmacias) {
+            if(f.getNombre().equals(nombre)&& f.getId()==ID ){
+                jDialog_LogInFarmacia.setVisible(false);
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "La farmacia no esta Resgitrada");
+            }
+        }
+    }//GEN-LAST:event_jButton_CrearF3ActionPerformed
+
+    private void jTextField_IDLogInLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_IDLogInLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_IDLogInLActionPerformed
+
+    private void jButton_CrearF4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF4ActionPerformed
+        String nombre = jTextField_NombreLogInL.getText();
+        int ID = Integer.parseInt( jTextField_IDLogInL.getText());
+        for (Laboratorio l : Laboratorios) {
+            if(l.getNombre().equals(nombre)&& l.getId()==ID ){
+                jDialog_LogInLaboratorio.setVisible(false);
+                jDialog_Laboratorio.setVisible(true);
+                jDialog_Laboratorio.setModal(true);
+                jDialog_Laboratorio.pack();
+                jDialog_Laboratorio.setLocationRelativeTo(this);
+            }else{
+                JOptionPane.showMessageDialog(null, "La Laboratorio no esta Resgitrada");
+            }
+        }
+    }//GEN-LAST:event_jButton_CrearF4ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        String nombre= (String)jComboBox1.getSelectedItem();
+        Farmacia Far=null;
+        DefaultTableModel model = new DefaultTableModel();
+        for (Farmacia F : Farmacias) {
+            if(F.getNombre().equals(nombre)){
+                Far= F;
+            }
+        }
+        for(Producto P :Far.getInventario()){
+            Object[] temp = new Object[6];
+            temp[0] = P.getNombre();
+            temp[1] = P.getId();
+            temp[2]=P.getUnidades();
+            temp[3]=P.getPrecio();
+            temp[4]= P.getFabricante();
+            temp[5]=P.getFamilia();
+            model.addRow(temp);
+        }
+        jTable1.setModel(model);
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        String nombre = (String)jComboBox2.getSelectedItem();
+        for (Laboratorio L : Laboratorios) {
+            if(L.getNombre().equals(nombre)){
+                Producto prod=new Producto(Integer.parseInt(jTextField_IDP.getText()), Integer.parseInt(jTextField_UnidadesP.getText()), Double.parseDouble(nombre), nombre, jTextField_FamiliaP.getText());
+                L.getProductos().add(prod);
+                JOptionPane.showMessageDialog(null,"Se ha creado el producto correctamente");
+            }
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        jDialog_Laboratorio.setVisible(false);
+        jDialog_LogInLaboratorio.setVisible(true);
+        jDialog_LogInLaboratorio.setModal(true);
+        jDialog_LogInLaboratorio.pack();
+        jDialog_LogInLaboratorio.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        String nombre= (String)jComboBox3.getSelectedItem();
+        Laboratorio Lab=null;
+        DefaultTableModel model = new DefaultTableModel();
+        for (Laboratorio L : Laboratorios) {
+            if(L.getNombre().equals(nombre)){
+                Lab= L;
+            }
+        }
+        for(Producto P :Lab.getProductos()){
+            Object[] temp = new Object[6];
+            temp[0] = P.getNombre();
+            temp[1] = P.getId();
+            temp[2]=P.getUnidades();
+            temp[3]=P.getPrecio();
+            temp[4]= P.getFabricante();
+            temp[5]=P.getFamilia();
+            model.addRow(temp);
+        }
+        jTable2.setModel(model);
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        jDialog_Farmacia.setVisible(false);
+        jDialog_LogInFarmacia.setVisible(true);
+        jDialog_LogInFarmacia.setModal(true);
+        jDialog_LogInFarmacia.pack();
+        jDialog_LogInFarmacia.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -91,6 +1350,102 @@ public class main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JButton jButton_Cliente;
+    private javax.swing.JButton jButton_Crear;
+    private javax.swing.JButton jButton_CrearF;
+    private javax.swing.JButton jButton_CrearF1;
+    private javax.swing.JButton jButton_CrearF2;
+    private javax.swing.JButton jButton_CrearF3;
+    private javax.swing.JButton jButton_CrearF4;
+    private javax.swing.JButton jButton_Farmacia;
+    private javax.swing.JButton jButton_Laboratorio;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JDialog jDialog_ComprarCliente;
+    private javax.swing.JDialog jDialog_CrearCliente;
+    private javax.swing.JDialog jDialog_CrearFarmacia;
+    private javax.swing.JDialog jDialog_CrearLaboratorio;
+    private javax.swing.JDialog jDialog_Farmacia;
+    private javax.swing.JDialog jDialog_Laboratorio;
+    private javax.swing.JDialog jDialog_LogInCliente;
+    private javax.swing.JDialog jDialog_LogInFarmacia;
+    private javax.swing.JDialog jDialog_LogInLaboratorio;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField_ContactoL;
+    private javax.swing.JTextField jTextField_CostoP;
+    private javax.swing.JTextField jTextField_DirF1;
+    private javax.swing.JTextField jTextField_DirL;
+    private javax.swing.JTextField jTextField_FamiliaP;
+    private javax.swing.JTextField jTextField_ID;
+    private javax.swing.JTextField jTextField_IDF;
+    private javax.swing.JTextField jTextField_IDL;
+    private javax.swing.JTextField jTextField_IDLogInC;
+    private javax.swing.JTextField jTextField_IDLogInF;
+    private javax.swing.JTextField jTextField_IDLogInL;
+    private javax.swing.JTextField jTextField_IDP;
+    private javax.swing.JTextField jTextField_Nombre;
+    private javax.swing.JTextField jTextField_NombreF;
+    private javax.swing.JTextField jTextField_NombreL;
+    private javax.swing.JTextField jTextField_NombreLogInC;
+    private javax.swing.JTextField jTextField_NombreLogInF;
+    private javax.swing.JTextField jTextField_NombreLogInL;
+    private javax.swing.JTextField jTextField_NombreP;
+    private javax.swing.JTextField jTextField_UnidadesP;
     // End of variables declaration//GEN-END:variables
  Conexion conectar = new Conexion("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+    ArrayList<Cliente> Clientes = new ArrayList<>();
+    ArrayList<Farmacia> Farmacias = new ArrayList<>();
+    ArrayList<Laboratorio> Laboratorios= new ArrayList<>();
 }
