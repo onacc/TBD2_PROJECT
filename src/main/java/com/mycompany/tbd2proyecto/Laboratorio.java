@@ -37,7 +37,6 @@ public class Laboratorio {
         this.productos = productos;
     }
     ArrayList<Producto> productos;
-
     public Laboratorio(int id, String direccion, String contact) {
         this.id = id;
         this.direccion = direccion;

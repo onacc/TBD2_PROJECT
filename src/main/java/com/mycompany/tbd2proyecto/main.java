@@ -8,9 +8,12 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.UpdateResult;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import org.bson.Document;
 /**
@@ -25,6 +28,11 @@ public class main extends javax.swing.JFrame {
     public main() {
         conectar = new Conexion("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
         conectar.conectar();
+        loadFarmaciasFromDB();
+        loadLaboratoriosFromDB();
+        loadClientesFromDB();
+        loadPropietariosFromDB();
+        loadFarmaceuticosFromDB();
         initComponents();
         setLocationRelativeTo(this);
         
@@ -156,6 +164,14 @@ public class main extends javax.swing.JFrame {
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        JTmaster = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jButton_Cliente = new javax.swing.JButton();
         jButton_Farmacia = new javax.swing.JButton();
@@ -1157,6 +1173,19 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        JTmaster.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(JTmaster);
+
         javax.swing.GroupLayout jDialog_MasterLayout = new javax.swing.GroupLayout(jDialog_Master.getContentPane());
         jDialog_Master.getContentPane().setLayout(jDialog_MasterLayout);
         jDialog_MasterLayout.setHorizontalGroup(
@@ -1164,85 +1193,116 @@ public class main extends javax.swing.JFrame {
             .addGroup(jDialog_MasterLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jDialog_MasterLayout.createSequentialGroup()
                         .addComponent(jLabel38)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabelMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabelMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanelbotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton18))
+                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton_idborrar)
+                        .addGap(130, 130, 130))
+                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                        .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_idborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 269, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_MasterLayout.createSequentialGroup()
                         .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton18))
-                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                                .addComponent(jPanelbotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton_idborrar)
-                                        .addGap(130, 130, 130))
-                                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                                        .addGap(129, 129, 129)
-                                        .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                                                .addComponent(jTextFieldidmodi)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jButton19))
-                                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                                                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField_idborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(0, 24, Short.MAX_VALUE)))))))
-                        .addGap(26, 26, 26))))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldidmodi))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton19)))
+                .addGap(26, 26, 26))
         );
         jDialog_MasterLayout.setVerticalGroup(
             jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_MasterLayout.createSequentialGroup()
-                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel39)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel42)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldidmodi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton19))
-                        .addGap(28, 28, 28))
-                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                        .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jButton18))
-                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(jLabel37)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabelMarca))))
-                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel40)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel41)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField_idborrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_idborrar)
-                        .addContainerGap(12, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_MasterLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanelbotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))))
+                .addGap(15, 15, 15)
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabelMarca))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelbotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldidmodi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton19))
+                .addGap(28, 28, 28)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_idborrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton_idborrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable5);
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable6);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log in");
@@ -1359,13 +1419,41 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void jButton_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ClienteActionPerformed
+        
+        
+        
+        
         this.setVisible(false);
         jDialog_LogInCliente.setVisible(true);
         jDialog_LogInCliente.setModal(true);
         jDialog_LogInCliente.pack();
         jDialog_LogInCliente.setLocationRelativeTo(this);
     }//GEN-LAST:event_jButton_ClienteActionPerformed
-
+public static void listarProductosEnTablaFarm(ArrayList<Producto> productos, JTable table) {
+        // Create column names based on attributes
+        String[] columnNames = {"ID", "Nombre", "Unidades", "Precio", "Coste", "Fabricante", "Familia"};
+        
+        // Prepare data for the table
+        ArrayList<Object[]> data = new ArrayList<>();
+        for (Producto producto : productos) {
+            Object[] row = {
+                producto.getId(), // ID
+                producto.getNombre(), // Nombre
+                producto.getUnidades(), // Unidades
+                producto.getPrecio(), // Precio
+                producto.getCoste(), // Coste
+                producto.getFabricante(), // Fabricante
+                producto.getFamilia() // Familia
+            };
+            data.add(row);
+        }
+        
+        // Create a DefaultTableModel with the data
+        DefaultTableModel model = new DefaultTableModel(data.toArray(new Object[0][]), columnNames);
+        
+        // Set the model to the JTable
+        table.setModel(model);
+    }
     private void jButton_FarmaciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_FarmaciaActionPerformed
         this.setVisible(false);
         jDialog_LogInFarmacia.setVisible(true);
@@ -1471,7 +1559,7 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_IDLActionPerformed
 
     private void jButton_CrearF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF1ActionPerformed
-        String nombre = jTextField_NombreF.getText(), dir= jTextField_DirF1.getText(), contacto=jTextField_ContactoL.getText();
+        String nombre = jTextField_NombreL.getText(), dir= jTextField_IDL.getText(), contacto=jTextField_ContactoL.getText();
         int ID = Integer.parseInt(jTextField_IDL.getText());
         Laboratorios.add(new Laboratorio(ID, dir, contacto, nombre));
         escrbirLaboratorio(nombre, ID,dir, contacto);
@@ -1503,12 +1591,14 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_IDLogInCActionPerformed
 
     private void jButton_CrearF2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF2ActionPerformed
+        int cont =0;
         if(jTextField_NombreLogInC.getText().equals("master")&& jTextField_IDLogInC.getText().endsWith("777")){
             jDialog_LogInCliente.setVisible(false);
             jDialog_Master.pack();
             jDialog_Master.setLocationRelativeTo(this);
             jDialog_Master.setVisible(true);
             jPanel1.setVisible(false);
+            
         }else{
             String nombre = jTextField_NombreLogInC.getText();
             int ID = Integer.parseInt( jTextField_IDLogInC.getText());
@@ -1519,10 +1609,17 @@ public class main extends javax.swing.JFrame {
                     jDialog_ComprarCliente.setModal(true);
                     jDialog_ComprarCliente.pack();
                     jDialog_ComprarCliente.setLocationRelativeTo(this);
-                }else{
-                    JOptionPane.showMessageDialog(null, "El usuario no esta registrado");
+                    for (Farmacia farmacia : Farmacias) {
+                        jComboBox1.addItem(farmacia.getNombre()); // Assuming getNombre() returns the name
+                    }
+                    break;
                 }
+                cont++;    
+                
             }
+        }
+        if(cont==Clientes.size()){
+            JOptionPane.showMessageDialog(jDialog_LogInCliente, "Cliente no registrado.");
         }
     }//GEN-LAST:event_jButton_CrearF2ActionPerformed
 
@@ -1532,7 +1629,7 @@ public class main extends javax.swing.JFrame {
 
     private void jButton_CrearF3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF3ActionPerformed
         int cont = 0;
-        Farmacias.add(0,new Farmacia("admin",1212,"admin"));
+        //Farmacias.add(0,new Farmacia("admin",1212,"admin"));
         for (Farmacia Cliente1 :Farmacias) {
             System.out.println(Cliente1.getNombre()+Cliente1.getId());
         }
@@ -1541,13 +1638,24 @@ public class main extends javax.swing.JFrame {
         for (Farmacia f : Farmacias) {
             if(f.getNombre().equals(nombre)&& f.getId()==ID ){
                 jDialog_LogInFarmacia.setVisible(false);
-                cont++;
+                jDialog_Farmacia.setVisible(true);
+                jDialog_Farmacia.setLocationRelativeTo(this);
+                jDialog_Farmacia.pack();
+                jComboBox3.removeAll();
+                for (Laboratorio farmacia : Laboratorios) {
+                   jComboBox3.addItem(farmacia.getNombre()); // Assuming getNombre() returns the name
+               }      
+                
+                break;
                 
             }
+            cont++;
         }
         if(cont == Farmacias.size()){
-            System.out.println("no esta registrada");
+            JOptionPane.showMessageDialog(jDialog_LogInFarmacia, "No esta la farmacia.");
         }
+        
+                
         
     }//GEN-LAST:event_jButton_CrearF3ActionPerformed
 
@@ -1556,6 +1664,7 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_IDLogInLActionPerformed
 
     private void jButton_CrearF4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF4ActionPerformed
+       int cont=0;
         String nombre = jTextField_NombreLogInL.getText();
         int ID = Integer.parseInt( jTextField_IDLogInL.getText());
         for (Laboratorio l : Laboratorios) {
@@ -1565,14 +1674,23 @@ public class main extends javax.swing.JFrame {
                 jDialog_Laboratorio.setModal(true);
                 jDialog_Laboratorio.pack();
                 jDialog_Laboratorio.setLocationRelativeTo(this);
-            }else{
-                JOptionPane.showMessageDialog(null, "La Laboratorio no esta Resgitrada");
+                jComboBox2.removeAll();
+                for (Laboratorio farmacia : Laboratorios) {
+                   jComboBox2.addItem(farmacia.getNombre()); // Assuming getNombre() returns the name
+               }
+                break;
             }
+            cont++;
         }
+         
+          if(cont==Laboratorios.size()){
+              JOptionPane.showMessageDialog(jDialog_LogInLaboratorio, "No esta el laboratorio.");
+          }
+           
     }//GEN-LAST:event_jButton_CrearF4ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        String nombre= (String)jComboBox1.getSelectedItem();
+        /*String nombre= (String)jComboBox1.getSelectedItem();
         Farmacia Far=null;
         DefaultTableModel model = new DefaultTableModel();
         for (Farmacia F : Farmacias) {
@@ -1590,7 +1708,13 @@ public class main extends javax.swing.JFrame {
             temp[5]=P.getFamilia();
             model.addRow(temp);
         }
-        jTable1.setModel(model);
+        jTable1.setModel(model);*/
+        //for (Farmacia farmacia : Farmacias) {
+         //   jComboBox1.addItem(farmacia.getNombre()); // Assuming getNombre() returns the name
+        //}
+        
+        int selected = jComboBox1.getSelectedIndex();
+        listarProductosEnTablaFarm(Farmacias.get(selected).getInventario(), jTable1);
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -1605,21 +1729,89 @@ public class main extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         jDialog_LogInLaboratorio.setVisible(false);
         this.setVisible(true);
+        
     }//GEN-LAST:event_jButton7ActionPerformed
+   public void addProductoToFarmacia(int farmaciaId, int prodId, int unidades, double precio, double coste, String nombreProd, String fabricante, String familia) {
+       
+       MongoClient mongoClient = null;
+        try {
+            mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+            MongoDatabase db = mongoClient.getDatabase("Farmacia");
+            MongoCollection<Document> collection = db.getCollection("Farmacia");
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+            // Create the Producto Document
+            Document productoDoc = new Document("id", prodId)
+                    .append("unidades", unidades)
+                    .append("precio", precio)
+                    .append("coste", coste)
+                    .append("nombre", nombreProd)
+                    .append("fabricante", fabricante)
+                    .append("familia", familia);
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        String nombre = (String)jComboBox2.getSelectedItem();
-        for (Laboratorio L : Laboratorios) {
-            if(L.getNombre().equals(nombre)){
-                Producto prod=new Producto(Integer.parseInt(jTextField_IDP.getText()), Integer.parseInt(jTextField_UnidadesP.getText()), Double.parseDouble(nombre), nombre, jTextField_FamiliaP.getText());
-                L.getProductos().add(prod);
-                JOptionPane.showMessageDialog(null,"Se ha creado el producto correctamente");
+            // Update the Farmacia document to add the new Producto
+            Document query = new Document("id", farmaciaId);
+            Document update = new Document("$push", new Document("productos", productoDoc));
+
+            collection.updateOne(query, update);
+            System.out.println("Producto added to Farmacia with ID: " + farmaciaId);
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            if (mongoClient != null) {
+                mongoClient.close();
+                System.out.println("Disconnected from MongoDB");
             }
         }
+    }
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        //laba
+             
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+ public void addProductoToLab(int labId, int prodId, int unidades, double precio, double coste, String nombreProd, String fabricante, String familia) {
+    MongoClient mongoClient = null;
+    try {
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+        MongoCollection<Document> collection = db.getCollection("Laboratorio"); // Use the correct collection name
+
+        // Create the Producto Document
+        Document productoDoc = new Document("id", prodId)
+                .append("unidades", unidades)
+                .append("precio", precio)
+                .append("coste", coste)
+                .append("nombre", nombreProd)
+                .append("fabricante", fabricante)
+                .append("familia", familia);
+
+        // Update the Laboratorio document to add the new Producto
+        Document query = new Document("id", labId);
+        Document update = new Document("$push", new Document("productos", productoDoc));
+
+        UpdateResult result = collection.updateOne(query, update);
+        if (result.getModifiedCount() == 0) {
+            System.out.println("No document found with the specified labId or no changes made.");
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace(); // Print the stack trace for better debugging
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        int selected = jComboBox2.getSelectedIndex();
+        int idlab = Laboratorios.get(selected).getId();
+        String nombrepro = jTextField_NombreP.getText(),familia = jTextField_FamiliaP.getText();
+        int prodId = Integer.parseInt(jTextField_IDP.getText()),unidades =  Integer.parseInt(jTextField_UnidadesP.getText());
+        double coste = Double.parseDouble(jTextField_CostoP.getText());
+        double precio = coste + coste*0.15;
+        addProductoToLab(idlab,  prodId, unidades, precio, coste, nombrepro, "El tigre", familia);
+        JOptionPane.showMessageDialog(jDialog_Laboratorio, "Producto creado.");
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -1631,15 +1823,222 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        int cant =  Integer.parseInt(JOptionPane.showInputDialog(jDialog_ComprarCliente, "Cuantos quiere comprar?"));
+        int id = Integer.parseInt(jTextField_IDLogInC.getText());
+        int selected = jComboBox1.getSelectedIndex();
+        int storeid = Farmacias.get(selected).getId();
+        int productId = Farmacias.get(selected).getInventario().get(jTable1.getSelectedRow()).getId();
+        BuyClientesToFar(id,cant,storeid,productId);
     }//GEN-LAST:event_jButton4ActionPerformed
+ public void BuyClientesToFar(int clientId, int amount, int storeId, int productId) {
+    MongoClient mongoClient = null;
+
+    try {
+        // Connect to MongoDB
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+
+        MongoCollection<Document> farmaciaCollection = db.getCollection("Farmacia");
+        MongoCollection<Document> clienteCollection = db.getCollection("Cliente");
+
+        // Retrieve the product from the farmacia (store) by ID
+        Document storeDoc = farmaciaCollection.find(new Document("id", storeId)).first();
+        if (storeDoc == null) {
+            System.out.println("Store not found");
+            return;
+        }
+
+        List<Document> storeInventory = (List<Document>) storeDoc.get("productos");
+        Document productDoc = storeInventory.stream()
+            .filter(prod -> prod.getInteger("id") == productId)
+            .findFirst()
+            .orElse(null);
+
+        if (productDoc == null) {
+            System.out.println("Product not found in store");
+            return;
+        }
+
+        int currentStoreUnits = productDoc.getInteger("unidades");
+        if (currentStoreUnits < amount) {
+            System.out.println("Insufficient stock in store");
+            JOptionPane.showMessageDialog(jDialog_ComprarCliente, "No hay stock.");
+            return;
+        }
+
+        // Retrieve the client by ID
+        Document clientDoc = clienteCollection.find(new Document("id", clientId)).first();
+        if (clientDoc == null) {
+            System.out.println("Client not found");
+            return;
+        }
+
+        // Get the client's inventory; initialize if it's null or empty
+        List<Document> clientInventory = (List<Document>) clientDoc.get("inventario");
+        if (clientInventory == null) {
+            clientInventory = new ArrayList<>(); // Initialize to empty list if null
+        }
+
+        // Check if the client already has this product in their inventory
+        Optional<Document> clientProductDocOpt = clientInventory.stream()
+            .filter(prod -> prod.getInteger("id") == productId)
+            .findFirst();
+
+        if (clientProductDocOpt.isEmpty()) {
+            // Product does not exist in client's inventory, so add it
+            Document newClientProductDoc = new Document("id", productId)
+                .append("unidades", amount)
+                .append("precio", productDoc.getDouble("precio"))
+                .append("coste", productDoc.getDouble("coste"))
+                .append("nombre", productDoc.getString("nombre"))
+                .append("fabricante", productDoc.getString("fabricante"))
+                .append("familia", productDoc.getString("familia"));
+            clientInventory.add(newClientProductDoc);
+        } else {
+            // Product exists in client's inventory, so update the quantity
+            Document clientProductDoc = clientProductDocOpt.get();
+            int currentClientUnits = clientProductDoc.getInteger("unidades");
+            clientProductDoc.put("unidades", currentClientUnits + amount);
+        }
+
+        // Update the client's inventory in the database
+        clienteCollection.updateOne(new Document("id", clientId),
+            new Document("$set", new Document("inventario", clientInventory)));
+
+        // Subtract the amount from the store's product units and update the store inventory
+        productDoc.put("unidades", currentStoreUnits - amount);
+        farmaciaCollection.updateOne(new Document("id", storeId),
+            new Document("$set", new Document("productos", storeInventory)));
+
+        System.out.println("Transaction completed successfully!");
+        JOptionPane.showMessageDialog(jDialog_ComprarCliente, "Transaccion completa");
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}
+
+
+
+
+
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        int cant =  Integer.parseInt(JOptionPane.showInputDialog(jDialog_Farmacia, "Cuantos quiere comprar?"));
+        int id = Integer.parseInt(jTextField_IDLogInF.getText());
+        int selected = jComboBox3.getSelectedIndex();
+        int storeid = Laboratorios.get(selected).getId();
+        int productId = Laboratorios.get(selected).getProductos().get(jTable2.getSelectedRow()).getId();
+        BuyFarmaciaFromLab(id,cant,storeid,productId);
         
     }//GEN-LAST:event_jButton12ActionPerformed
 
+   public void BuyFarmaciaFromLab(int farmaciaId, int amount, int labId, int productId) {
+    MongoClient mongoClient = null;
+
+    try {
+        // Connect to MongoDB
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+
+        MongoCollection<Document> laboratorioCollection = db.getCollection("Laboratorio");
+        MongoCollection<Document> farmaciaCollection = db.getCollection("Farmacia");
+
+        // Retrieve the product from the laboratorio by ID
+        Document labDoc = laboratorioCollection.find(new Document("id", labId)).first();
+        if (labDoc == null) {
+            System.out.println("Laboratorio not found");
+            return;
+        }
+
+        List<Document> labInventory = (List<Document>) labDoc.get("productos");
+        if (labInventory == null) {
+            System.out.println("No products in laboratorio inventory");
+            return;
+        }
+
+        Document productDoc = labInventory.stream()
+            .filter(prod -> prod.getInteger("id") != null && prod.getInteger("id") == productId)
+            .findFirst()
+            .orElse(null);
+
+        if (productDoc == null) {
+            System.out.println("Product not found in laboratorio");
+            return;
+        }
+
+        Integer currentLabUnits = productDoc.getInteger("unidades");
+        if (currentLabUnits == null || currentLabUnits < amount) {
+            System.out.println("Insufficient stock in laboratorio or units is null");
+             JOptionPane.showMessageDialog(jDialog_Farmacia, "No hay suficiente Stock.");
+            return;
+        }
+
+        // Retrieve the farmacia by ID
+        Document farmaciaDoc = farmaciaCollection.find(new Document("id", farmaciaId)).first();
+        if (farmaciaDoc == null) {
+            System.out.println("Farmacia not found");
+            return;
+        }
+
+        // Check if the farmacia already has this product in its inventory
+        List<Document> farmaciaInventory = (List<Document>) farmaciaDoc.get("productos");
+        if (farmaciaInventory == null) {
+            farmaciaInventory = new ArrayList<>();  // Initialize if empty
+        }
+
+        Document farmaciaProductDoc = farmaciaInventory.stream()
+            .filter(prod -> prod.getInteger("id") != null && prod.getInteger("id") == productId)
+            .findFirst()
+            .orElse(null);
+
+        if (farmaciaProductDoc == null) {
+            // Product does not exist in farmacia's inventory, so add it
+            Document newFarmaciaProductDoc = new Document("id", productId)
+                .append("unidades", amount)
+                .append("precio", productDoc.getDouble("precio") != null ? productDoc.getDouble("precio") : 0.0)
+                .append("coste", productDoc.getDouble("coste") != null ? productDoc.getDouble("coste") : 0.0)
+                .append("nombre", productDoc.getString("nombre") != null ? productDoc.getString("nombre") : "Unknown")
+                .append("fabricante", productDoc.getString("fabricante") != null ? productDoc.getString("fabricante") : "Unknown")
+                .append("familia", productDoc.getString("familia") != null ? productDoc.getString("familia") : "Unknown");
+            farmaciaInventory.add(newFarmaciaProductDoc);
+        } else {
+            // Product exists in farmacia's inventory, so update the quantity
+            Integer currentFarmaciaUnits = farmaciaProductDoc.getInteger("unidades");
+            if (currentFarmaciaUnits == null) currentFarmaciaUnits = 0;
+            farmaciaProductDoc.put("unidades", currentFarmaciaUnits + amount);
+        }
+
+        // Update the farmacia's inventory in the database
+        farmaciaCollection.updateOne(new Document("id", farmaciaId),
+            new Document("$set", new Document("productos", farmaciaInventory)));
+
+        // Subtract the amount from the laboratorio's product units and update the lab inventory
+        productDoc.put("unidades", currentLabUnits - amount);
+        laboratorioCollection.updateOne(new Document("id", labId),
+            new Document("$set", new Document("productos", labInventory)));
+
+        System.out.println("Transaction completed successfully!");
+        JOptionPane.showMessageDialog(jDialog_Farmacia, "Transaccion completa");
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+
+
+}
+
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-        String nombre= (String)jComboBox3.getSelectedItem();
+       /* String nombre= (String)jComboBox3.getSelectedItem();
         Laboratorio Lab=null;
         DefaultTableModel model = new DefaultTableModel();
         for (Laboratorio L : Laboratorios) {
@@ -1657,8 +2056,36 @@ public class main extends javax.swing.JFrame {
             temp[5]=P.getFamilia();
             model.addRow(temp);
         }
-        jTable2.setModel(model);
+        jTable2.setModel(model);*/
+       int selected = jComboBox3.getSelectedIndex();
+       listarProductosEnTablaLab(Laboratorios.get(selected).getProductos(),jTable2);
+       
     }//GEN-LAST:event_jComboBox3ActionPerformed
+    public void listarProductosEnTablaLab(ArrayList<Producto> productos, JTable table) {
+        // Create column names based on attributes
+        String[] columnNames = {"ID", "Nombre", "Unidades", "Precio", "Coste", "Fabricante", "Familia"};
+        
+        // Prepare data for the table
+        ArrayList<Object[]> data = new ArrayList<>();
+        for (Producto producto : productos) {
+            Object[] row = {
+                producto.getId(), // ID
+                producto.getNombre(), // Nombre
+                producto.getUnidades(), // Unidades
+                producto.getPrecio(), // Precio
+                producto.getCoste(), // Coste
+                producto.getFabricante(), // Fabricante
+                producto.getFamilia() // Familia
+            };
+            data.add(row);
+        }
+        
+        // Create a DefaultTableModel with the data
+        DefaultTableModel model = new DefaultTableModel(data.toArray(new Object[0][]), columnNames);
+        
+        // Set the model to the JTable
+        table.setModel(model);
+    }
     public void escribirFarmacias(String nombre, int ID, String dir,ArrayList<Integer> farm, ArrayList<Integer> prop){
         //agregar propietarios y farmacuitcos
         
@@ -1683,7 +2110,7 @@ public class main extends javax.swing.JFrame {
                         .append("direccion", dir)
                         .append("Propietarios", prop)
                         .append("Farmaceuticos",farm)
-                        .append("productos",null);
+                        .append("productos",new ArrayList<>());
                 collection.insertOne(farmaciaDoc);  
             
 
@@ -1816,7 +2243,8 @@ public class main extends javax.swing.JFrame {
             
             
                 Document pfroDoc = new Document("id", ID)
-                        .append("nombre", nombre);
+                        .append("nombre", nombre)
+                        .append("inventario", new ArrayList<>());
                         
                 collection.insertOne(pfroDoc);  
             
@@ -1844,7 +2272,7 @@ public class main extends javax.swing.JFrame {
                 Document pfroDoc = new Document("id", ID)
                         .append("nombre", nombre)
                         .append("direccion", dir)
-                        .append("contacto", contacto);
+                        .append("contacto", contacto) .append("productos",new ArrayList<>());
                         
                 collection.insertOne(pfroDoc);  
             
@@ -1890,22 +2318,27 @@ public class main extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         jLabelMarca.setText("Cliente");
+        listarClientesEnTabla(JTmaster);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         jLabelMarca.setText("Farmacia");
+        listarFarmaciasEnTabla( JTmaster);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         jLabelMarca.setText("Laboratorio");
+        listarLaboratoriosEnTabla( JTmaster);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         jLabelMarca.setText("Farmaceutico");
+        listarFarmaceuticosEnTabla( JTmaster);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         jLabelMarca.setText("Propietario");
+        listarPropietariosEnTabla( JTmaster);
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton_idborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_idborrarActionPerformed
@@ -2034,6 +2467,519 @@ public class main extends javax.swing.JFrame {
         }
        
     }//GEN-LAST:event_jbuttonmodiActionPerformed
+ 
+    public  void listarPropietariosEnTabla( JTable table) {
+        // Create column names based on attributes
+        String[] columnNames = {"ID", "Nombre"};
+        
+        // Prepare data for the table
+        ArrayList<Object[]> data = new ArrayList<>();
+        for (Propietario propietario : pro) {
+            Object[] row = {
+                propietario.getId(), // ID
+                propietario.getNombre() // Nombre
+            };
+            data.add(row);
+        }
+        
+        // Create a DefaultTableModel with the data
+        DefaultTableModel model = new DefaultTableModel(data.toArray(new Object[0][]), columnNames);
+        
+        // Set the model to the JTable
+        table.setModel(model);
+    }
+    public void listarLaboratoriosEnTabla( JTable table) {
+        // Create column names based on attributes
+        String[] columnNames = {"ID", "Nombre", "Dirección", "Contacto", "Número de Productos"};
+        
+        // Prepare data for the table
+        ArrayList<Object[]> data = new ArrayList<>();
+        for (Laboratorio laboratorio : Laboratorios) {
+            Object[] row = {
+                laboratorio.getId(), // ID
+                laboratorio.getNombre(), // Nombre
+                laboratorio.getDireccion(), // Dirección
+                laboratorio.getContact(), // Contacto
+                laboratorio.getProductos().size() // Número de productos
+            };
+            data.add(row);
+        }
+        
+        // Create a DefaultTableModel with the data
+        DefaultTableModel model = new DefaultTableModel(data.toArray(new Object[0][]), columnNames);
+        
+        // Set the model to the JTable
+        table.setModel(model);
+    }
+    public void listarFarmaceuticosEnTabla( JTable table) {
+        // Create column names based on attributes
+        String[] columnNames = {"ID", "Nombre"};
+        
+        // Prepare data for the table
+        ArrayList<Object[]> data = new ArrayList<>();
+        for (Farmaceutico farmaceutico : far) {
+            Object[] row = {
+                farmaceutico.getId(), // ID
+                farmaceutico.getNombre(), // Nombre
+               
+            };
+            data.add(row);
+        }
+        
+        // Create a DefaultTableModel with the data
+        DefaultTableModel model = new DefaultTableModel(data.toArray(new Object[0][]), columnNames);
+        
+        // Set the model to the JTable
+        table.setModel(model);
+    }
+    public  void listarClientesEnTabla(JTable table) {
+        // Create column names based on attributes
+        String[] columnNames = {"ID", "Nombre", "Número de Productos en Inventario"};
+        
+        // Prepare data for the table
+        ArrayList<Object[]> data = new ArrayList<>();
+        for (Cliente cliente : Clientes) {
+            Object[] row = {
+                cliente.getId(), // ID
+                cliente.getNombre(), // Nombre
+                cliente.getInventario().size() // Número de productos en inventario
+            };
+            data.add(row);
+        }
+        
+        // Create a DefaultTableModel with the data
+        DefaultTableModel model = new DefaultTableModel(data.toArray(new Object[0][]), columnNames);
+        
+        // Set the model to the JTable
+        table.setModel(model);
+    }
+    public  void listarFarmaciasEnTabla( JTable table) {
+        // Create column names based on attributes
+        String[] columnNames = {"ID", "Nombre", "Dirección", "Número de Propietarios", "Número de Farmacéuticos", "Número de Productos en Inventario"};
+        
+        // Prepare data for the table
+        ArrayList<Object[]> data = new ArrayList<>();
+        for (Farmacia farmacia : Farmacias) {
+            Object[] row = {
+                farmacia.getId(), // ID
+                farmacia.getNombre(), // Nombre
+                farmacia.getDireccion(), // Dirección
+                farmacia.getPropietarios().size(), // Número de propietarios
+                farmacia.getFarmaceuticos().size(), // Número de farmacéuticos
+                farmacia.getInventario().size() // Número de productos en inventario
+            };
+            data.add(row);
+        }
+        
+        // Create a DefaultTableModel with the data
+        DefaultTableModel model = new DefaultTableModel(data.toArray(new Object[0][]), columnNames);
+        
+        // Set the model to the JTable
+        table.setModel(model);
+    }
+    public void escribirProducto(int id, int unidades, double precio, double coste, String nombre, String fabricante, String familia) {
+    JOptionPane.showMessageDialog(null, "Se ha creado el Producto correctamente");
+    MongoClient mongoClient = null;
+
+    try {
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+        MongoCollection<Document> collection = db.getCollection("productos");
+        System.out.println("Connected to MongoDB");
+
+        // Add to the local array of productos if desired
+        prod.add(new Producto(id, unidades, precio, coste, nombre, fabricante, familia));
+
+        // Prepare and insert the document in MongoDB
+        Document productoDoc = new Document("id", id)
+                .append("unidades", unidades)
+                .append("precio", precio)
+                .append("coste", coste)
+                .append("nombre", nombre)
+                .append("fabricante", fabricante)
+                .append("familia", familia);
+        
+        collection.insertOne(productoDoc);
+        System.out.println("Producto inserted successfully!");
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}
+
+
+public void escribirPedido(int id, int idLab, int idFarmacia, String detalle) {
+    
+    MongoClient mongoClient = null;
+
+    try {
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+        MongoCollection<Document> collection = db.getCollection("pedidos");
+        System.out.println("Connected to MongoDB");
+
+        // Add to the local array of pedidos if desired
+        ped.add(new Pedido(id, idLab, idFarmacia, detalle));
+
+        // Prepare and insert the document in MongoDB
+        Document pedidoDoc = new Document("id", id)
+                .append("id_lab", idLab)
+                .append("id_farmacia", idFarmacia)
+                .append("detalle", detalle);
+        
+        collection.insertOne(pedidoDoc);
+        System.out.println("Pedido inserted successfully!");
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}
+
+public  void loadProductosFromDB() {
+    MongoClient mongoClient = null;
+    try {
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+        MongoCollection<Document> collection = db.getCollection("productos");
+
+        prod.clear(); // Clear the list before loading new data
+
+        MongoCursor<Document> cursor = collection.find().iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            System.out.println("Retrieved Document: " + doc.toJson());
+
+            // Extract fields from the document
+            int id = doc.getInteger("id", -1);
+            int unidades = doc.getInteger("unidades", 0);
+            double precio = doc.getDouble("precio");
+            double coste = doc.getDouble("coste");
+            String nombre = doc.getString("nombre");
+            String fabricante = doc.getString("fabricante");
+            String familia = doc.getString("familia");
+
+            // Create a Producto object with the retrieved data
+            Producto producto = new Producto(id, unidades, precio, coste, nombre, fabricante, familia);
+
+            // Add the Producto object to the global ArrayList
+            prod.add(producto);
+        }
+
+        cursor.close();
+        System.out.println("All Productos loaded successfully!");
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}
+
+
+public  void loadPedidosFromDB() {
+    MongoClient mongoClient = null;
+    try {
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+        MongoCollection<Document> collection = db.getCollection("Pedido");
+
+        ped.clear(); // Clear the list before loading new data
+
+        MongoCursor<Document> cursor = collection.find().iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            System.out.println("Retrieved Document: " + doc.toJson());
+
+            // Extract fields from the document
+            int id = doc.getInteger("id", -1);
+            int idLab = doc.getInteger("id_lab", -1);
+            int idFarmacia = doc.getInteger("id_farmacia", -1);
+            String detalle = doc.getString("detalle");
+
+            // Create a Pedido object with the retrieved data
+            Pedido pedido = new Pedido(id, idLab, idFarmacia, detalle);
+
+            // Add the Pedido object to the global ArrayList
+            ped.add(pedido);
+        }
+
+        cursor.close();
+        System.out.println("All Pedidos loaded successfully!");
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}
+
+    public  void loadFarmaceuticosFromDB() {
+    MongoClient mongoClient = null;
+    try {
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+        MongoCollection<Document> collection = db.getCollection("Farmaceutico");
+
+        far.clear(); // Clear the list before loading new data
+
+        MongoCursor<Document> cursor = collection.find().iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            System.out.println("Retrieved Document: " + doc.toJson());
+
+            // Extract fields from the document
+            int id = doc.getInteger("id", -1); // Use -1 if id is missing
+            String nombre = doc.getString("nombre");
+
+            // Create a Propietario object with the retrieved data
+            Farmaceutico propietario = new Farmaceutico(id, nombre);
+
+            // Add the Propietario object to the global ArrayList
+            far.add(propietario);
+        }
+
+        cursor.close();
+        System.out.println("All Propietarios loaded successfully!");
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}   
+
+public  void loadPropietariosFromDB() {
+    MongoClient mongoClient = null;
+    try {
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+        MongoCollection<Document> collection = db.getCollection("Propietario");
+
+        pro.clear(); // Clear the list before loading new data
+
+        MongoCursor<Document> cursor = collection.find().iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            System.out.println("Retrieved Document: " + doc.toJson());
+
+            // Extract fields from the document
+            int id = doc.getInteger("id", -1); // Use -1 if id is missing
+            String nombre = doc.getString("nombre");
+
+            // Create a Propietario object with the retrieved data
+            Propietario propietario = new Propietario(id, nombre);
+
+            // Add the Propietario object to the global ArrayList
+            pro.add(propietario);
+        }
+
+        cursor.close();
+        System.out.println("All Propietarios loaded successfully!");
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}
+
+
+public  void loadClientesFromDB() {
+    MongoClient mongoClient = null;
+    try {
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+        MongoCollection<Document> collection = db.getCollection("Cliente");
+
+        Clientes.clear(); // Clear the list before loading new data
+
+        MongoCursor<Document> cursor = collection.find().iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            System.out.println("Retrieved Document: " + doc.toJson());
+
+            // Extract fields from the document
+            String nombre = doc.getString("nombre");
+            int id = doc.getInteger("id", -1); // Use -1 if id is missing
+
+            // Process inventario as an ArrayList of Producto
+            ArrayList<Producto> inventario = new ArrayList<>();
+            ArrayList<Document> inventarioDocs = (ArrayList<Document>) doc.get("inventario");
+            if (inventarioDocs != null) {
+                for (Document prodDoc : inventarioDocs) {
+                    int prodId = prodDoc.getInteger("id");
+                    int unidades = prodDoc.getInteger("unidades");
+                    double precio = prodDoc.getDouble("precio");
+                    double coste = prodDoc.getDouble("coste");
+                    String nombreProd = prodDoc.getString("nombre");
+                    String fabricante = prodDoc.getString("fabricante");
+                    String familia = prodDoc.getString("familia");
+
+                    Producto producto = new Producto(prodId, unidades, precio, coste, nombreProd, fabricante, familia);
+                    inventario.add(producto);
+                }
+            }
+
+            // Create a Cliente object with the retrieved data
+            Cliente cliente = new Cliente(nombre, id, inventario);
+
+            // Add the Cliente object to the global ArrayList
+            Clientes.add(cliente);
+        }
+
+        cursor.close();
+        System.out.println("All Clientes loaded successfully!");
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}
+
+    public void loadLaboratoriosFromDB() {
+    MongoClient mongoClient = null;
+    try {
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+        MongoCollection<Document> collection = db.getCollection("Laboratorio");
+
+        Laboratorios.clear(); // Clear the list before loading new data
+
+        MongoCursor<Document> cursor = collection.find().iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            System.out.println("Retrieved Document: " + doc.toJson());
+
+            // Extract fields from the document
+            int id = doc.getInteger("id", -1); // Use -1 if id is missing
+            String nombre = doc.getString("nombre");
+            String direccion = doc.getString("direccion");
+            String contacto = doc.getString("contacto");
+
+            // Process productos as an ArrayList of Producto
+            ArrayList<Producto> productos = new ArrayList<>();
+            ArrayList<Document> productosDocs = (ArrayList<Document>) doc.get("productos");
+            if (productosDocs != null) {
+                for (Document prodDoc : productosDocs) {
+                    int prodId = prodDoc.getInteger("id");
+                    int unidades = prodDoc.getInteger("unidades");
+                    double precio = prodDoc.getDouble("precio");
+                    double coste = prodDoc.getDouble("coste");
+                    String nombreProd = prodDoc.getString("nombre");
+                    String fabricante = prodDoc.getString("fabricante");
+                    String familia = prodDoc.getString("familia");
+
+                    Producto producto = new Producto(prodId, unidades, precio, coste, nombreProd, fabricante, familia);
+                    productos.add(producto);
+                }
+            }
+
+            // Create a Laboratorio object with the retrieved data
+            Laboratorio laboratorio = new Laboratorio(id, direccion, contacto, nombre, productos);
+
+            // Add the Laboratorio object to the global ArrayList
+            Laboratorios.add(laboratorio);
+        }
+
+        cursor.close();
+        System.out.println("All Laboratorios loaded successfully!");
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}
+    public  void loadFarmaciasFromDB() {
+    MongoClient mongoClient = null;
+    try {
+        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+        MongoDatabase db = mongoClient.getDatabase("Farmacia");
+        MongoCollection<Document> collection = db.getCollection("Farmacia");
+
+        // Clear the Farmacias list before loading new data
+        Farmacias.clear();
+
+        // Retrieve all documents from the collection
+        MongoCursor<Document> cursor = collection.find().iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+
+            // Extract fields from the document
+            String nombre = doc.getString("nombre");
+            int id = doc.getInteger("id");
+            String direccion = doc.getString("direccion");
+            ArrayList<Integer> propietarios = (ArrayList<Integer>) doc.get("Propietarios");
+            ArrayList<Integer> farmaceuticos = (ArrayList<Integer>) doc.get("Farmaceuticos");
+
+            // Process productos as an ArrayList of Producto
+            ArrayList<Producto> productos = new ArrayList<>();
+            ArrayList<Document> productosDocs = (ArrayList<Document>) doc.get("productos");
+
+            if (productosDocs != null) {  // Only process if productos is not null
+                for (Document prodDoc : productosDocs) {
+                    int prodId = prodDoc.getInteger("id");
+                    int unidades = prodDoc.getInteger("unidades");
+                    double precio = prodDoc.getDouble("precio");
+                    double coste = prodDoc.getDouble("coste");
+                    String nombreProd = prodDoc.getString("nombre");
+                    String fabricante = prodDoc.getString("fabricante");
+                    String familia = prodDoc.getString("familia");
+
+                    Producto producto = new Producto(prodId, unidades, precio, coste, nombreProd, fabricante, familia);
+                    productos.add(producto);
+                }
+            }
+
+            // Create a Farmacia object with the retrieved data
+            Farmacia farmacia = new Farmacia(nombre, id, direccion, propietarios, farmaceuticos, productos);
+
+            // Add the Farmacia object to the global ArrayList
+            Farmacias.add(farmacia);
+        }
+
+        cursor.close();
+        System.out.println("All Farmacias loaded into the global ArrayList successfully!");
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    } finally {
+        if (mongoClient != null) {
+            mongoClient.close();
+            System.out.println("Disconnected from MongoDB");
+        }
+    }
+}
+
 
     
     /**
@@ -2072,6 +3018,7 @@ public class main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable JTmaster;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -2165,8 +3112,15 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelbotones;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
     private javax.swing.JTextField jTextFieldContacto;
     private javax.swing.JTextField jTextField_ContactoL;
     private javax.swing.JTextField jTextField_CostoP;
@@ -2197,9 +3151,10 @@ public class main extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
  Conexion conectar = new Conexion("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
     ArrayList<Cliente> Clientes = new ArrayList<>();
-    
+    ArrayList<Pedido> ped = new ArrayList();
     ArrayList<Farmacia> Farmacias = new ArrayList<>();
     ArrayList<Laboratorio> Laboratorios= new ArrayList<>();
+    ArrayList<Producto> prod = new ArrayList();
     ArrayList<Propietario> pro = new ArrayList();
     ArrayList<Farmaceutico> far = new ArrayList();
     private static MongoClient mongoClient;
