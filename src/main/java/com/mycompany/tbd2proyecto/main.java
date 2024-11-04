@@ -729,6 +729,11 @@ public class main extends javax.swing.JFrame {
 
         jButton8.setBackground(new java.awt.Color(255, 51, 51));
         jButton8.setText("X");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jDialog_ComprarClienteLayout = new javax.swing.GroupLayout(jDialog_ComprarCliente.getContentPane());
         jDialog_ComprarCliente.getContentPane().setLayout(jDialog_ComprarClienteLayout);
@@ -2467,6 +2472,17 @@ public static void listarProductosEnTablaFarm(ArrayList<Producto> productos, JTa
         }
        
     }//GEN-LAST:event_jbuttonmodiActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        jTextField_NombreLogInC.setText("");
+        jTextField_IDLogInC.setText("");
+        jDialog_ComprarCliente.setVisible(false);
+        jDialog_LogInCliente.setVisible(true);
+        jDialog_LogInCliente.setModal(true);
+        jDialog_LogInCliente.pack();
+        jDialog_LogInCliente.setLocationRelativeTo(this);
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
  
     public  void listarPropietariosEnTabla( JTable table) {
         // Create column names based on attributes
