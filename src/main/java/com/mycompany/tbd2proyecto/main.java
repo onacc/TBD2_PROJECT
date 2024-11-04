@@ -127,6 +127,35 @@ public class main extends javax.swing.JFrame {
         jTextField_CostoP = new javax.swing.JTextField();
         jTextField_FamiliaP = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
+        jDialog_Master = new javax.swing.JDialog();
+        jButton18 = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabelMarca = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jTextField_idborrar = new javax.swing.JTextField();
+        jButton_idborrar = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jTextFieldidmodi = new javax.swing.JTextField();
+        jButton19 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelmodnom = new javax.swing.JLabel();
+        jTextFieldmodnom = new javax.swing.JTextField();
+        jLabelmodid = new javax.swing.JLabel();
+        jTextFieldmodid = new javax.swing.JTextField();
+        jbuttonmodi = new javax.swing.JButton();
+        jLabel43 = new javax.swing.JLabel();
+        jTextFielddireccion = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        jTextFieldContacto = new javax.swing.JTextField();
+        jPanelbotones = new javax.swing.JPanel();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton_Cliente = new javax.swing.JButton();
         jButton_Farmacia = new javax.swing.JButton();
@@ -134,8 +163,6 @@ public class main extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-
-        jDialog_CrearCliente.setPreferredSize(new java.awt.Dimension(538, 420));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("Ingrese su Nombre");
@@ -362,15 +389,6 @@ public class main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearLaboratorioLayout.createSequentialGroup()
                 .addContainerGap(68, Short.MAX_VALUE)
                 .addGroup(jDialog_CrearLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearLaboratorioLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel10)
-                        .addGap(51, 51, 51)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearLaboratorioLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton_CrearF1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(147, 147, 147))
                     .addGroup(jDialog_CrearLaboratorioLayout.createSequentialGroup()
                         .addGroup(jDialog_CrearLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField_NombreL)
@@ -381,7 +399,17 @@ public class main extends javax.swing.JFrame {
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField_ContactoL, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearLaboratorioLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jDialog_CrearLaboratorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearLaboratorioLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(51, 51, 51)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_CrearLaboratorioLayout.createSequentialGroup()
+                                .addComponent(jButton_CrearF1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(147, 147, 147)))))
                 .addGap(31, 31, 31))
         );
         jDialog_CrearLaboratorioLayout.setVerticalGroup(
@@ -954,6 +982,268 @@ public class main extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
+        jButton18.setBackground(new java.awt.Color(255, 51, 51));
+        jButton18.setText("X");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel37.setText("Modificar y Eliminar");
+
+        jLabel38.setText("Actual:");
+
+        jLabelMarca.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelMarca.setForeground(new java.awt.Color(0, 204, 51));
+        jLabelMarca.setText("Cliente");
+
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel40.setText("Borrar");
+        jLabel40.setAutoscrolls(true);
+
+        jLabel41.setText("Ingrese ID a borrar:");
+
+        jButton_idborrar.setText("BORRAR");
+        jButton_idborrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_idborrarActionPerformed(evt);
+            }
+        });
+
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel39.setText("Modificar");
+
+        jLabel42.setText("Ingrese ID a modificar:");
+
+        jButton19.setText("OK");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+
+        jLabelmodnom.setText("Nombre");
+
+        jTextFieldmodnom.setActionCommand("<Not Set>");
+
+        jLabelmodid.setText("ID");
+
+        jbuttonmodi.setText("Modificar");
+        jbuttonmodi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbuttonmodiActionPerformed(evt);
+            }
+        });
+
+        jLabel43.setText("Dirección");
+
+        jLabel44.setText("Contacto");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelmodnom, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelmodid, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextFieldContacto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                            .addComponent(jTextFielddireccion, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldmodid, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldmodnom, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addComponent(jbuttonmodi)
+                        .addGap(14, 14, 14))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelmodnom)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldmodnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelmodid)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldmodid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFielddireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addComponent(jTextFieldContacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbuttonmodi)
+                        .addGap(62, 62, 62))))
+        );
+
+        jButton16.setText("Farmaceutico");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jButton17.setText("Propietario");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("Cliente");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButton14.setText("Farmacia");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setText("Laboratorio");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelbotonesLayout = new javax.swing.GroupLayout(jPanelbotones);
+        jPanelbotones.setLayout(jPanelbotonesLayout);
+        jPanelbotonesLayout.setHorizontalGroup(
+            jPanelbotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelbotonesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelbotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                    .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanelbotonesLayout.setVerticalGroup(
+            jPanelbotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelbotonesLayout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(jButton13)
+                .addGap(18, 18, 18)
+                .addComponent(jButton14)
+                .addGap(18, 18, 18)
+                .addComponent(jButton15)
+                .addGap(18, 18, 18)
+                .addComponent(jButton16)
+                .addGap(18, 18, 18)
+                .addComponent(jButton17)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jDialog_MasterLayout = new javax.swing.GroupLayout(jDialog_Master.getContentPane());
+        jDialog_Master.getContentPane().setLayout(jDialog_MasterLayout);
+        jDialog_MasterLayout.setHorizontalGroup(
+            jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                        .addComponent(jLabel38)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                        .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton18))
+                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                                .addComponent(jPanelbotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton_idborrar)
+                                        .addGap(130, 130, 130))
+                                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                                        .addGap(129, 129, 129)
+                                        .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                                                .addComponent(jTextFieldidmodi)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jButton19))
+                                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                                                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jTextField_idborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(0, 24, Short.MAX_VALUE)))))))
+                        .addGap(26, 26, 26))))
+        );
+        jDialog_MasterLayout.setVerticalGroup(
+            jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_MasterLayout.createSequentialGroup()
+                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldidmodi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton19))
+                        .addGap(28, 28, 28))
+                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                        .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButton18))
+                            .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jLabel37)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel38)
+                            .addComponent(jLabelMarca))))
+                .addGroup(jDialog_MasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog_MasterLayout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel41)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField_idborrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton_idborrar)
+                        .addContainerGap(12, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_MasterLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanelbotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log in");
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -1213,17 +1503,25 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_IDLogInCActionPerformed
 
     private void jButton_CrearF2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CrearF2ActionPerformed
-        String nombre = jTextField_NombreLogInC.getText();
-        int ID = Integer.parseInt( jTextField_IDLogInC.getText());
-        for (Cliente Cliente1 : Clientes) {
-            if(Cliente1.getNombre().equals(nombre)&& Cliente1.getId()==ID ){
-                jDialog_LogInCliente.setVisible(false);
-                jDialog_ComprarCliente.setVisible(true);
-                jDialog_ComprarCliente.setModal(true);
-                jDialog_ComprarCliente.pack();
-                jDialog_ComprarCliente.setLocationRelativeTo(this);
-            }else{
-                JOptionPane.showMessageDialog(null, "El usuario no esta registrado");
+        if(jTextField_NombreLogInC.getText().equals("master")&& jTextField_IDLogInC.getText().endsWith("777")){
+            jDialog_LogInCliente.setVisible(false);
+            jDialog_Master.pack();
+            jDialog_Master.setLocationRelativeTo(this);
+            jDialog_Master.setVisible(true);
+            jPanel1.setVisible(false);
+        }else{
+            String nombre = jTextField_NombreLogInC.getText();
+            int ID = Integer.parseInt( jTextField_IDLogInC.getText());
+            for (Cliente Cliente1 : Clientes) {
+                if(Cliente1.getNombre().equals(nombre)&& Cliente1.getId()==ID ){
+                    jDialog_LogInCliente.setVisible(false);
+                    jDialog_ComprarCliente.setVisible(true);
+                    jDialog_ComprarCliente.setModal(true);
+                    jDialog_ComprarCliente.pack();
+                    jDialog_ComprarCliente.setLocationRelativeTo(this);
+                }else{
+                    JOptionPane.showMessageDialog(null, "El usuario no esta registrado");
+                }
             }
         }
     }//GEN-LAST:event_jButton_CrearF2ActionPerformed
@@ -1574,6 +1872,169 @@ public class main extends javax.swing.JFrame {
       
     }//GEN-LAST:event_jButton_CrearFMouseClicked
 
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        jPanelbotones.setVisible(true);
+        jTextFieldmodid.setText("");
+        jTextFielddireccion.setText("");
+        jTextFieldmodnom.setText("");
+        jButton_idborrar.setEnabled(true);
+        jTextFieldidmodi.setEnabled(true);
+        jTextFieldidmodi.setText("");
+        jPanel1.setVisible(false);
+        jDialog_Master.setVisible(false);
+        jTextFielddireccion.setEnabled(false);
+        jTextFieldContacto.setText("");
+        jTextFieldContacto.setEnabled(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        jLabelMarca.setText("Cliente");
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        jLabelMarca.setText("Farmacia");
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        jLabelMarca.setText("Laboratorio");
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        jLabelMarca.setText("Farmaceutico");
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        jLabelMarca.setText("Propietario");
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton_idborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_idborrarActionPerformed
+        deleteMaster();
+    }//GEN-LAST:event_jButton_idborrarActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        
+        try{
+            mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+            db = mongoClient.getDatabase("Farmacia");
+            collection = db.getCollection(jLabelMarca.getText());
+            System.out.println("Connected to MongoDB");
+            int id=Integer.parseInt(jTextFieldidmodi.getText());
+            Document filtro = new Document("id", id);
+            long count = collection.countDocuments(filtro);
+            if (count == 0) {
+                JOptionPane.showMessageDialog(null,"No se encontró "+ jLabelMarca.getText()+" con el ID especificado.");
+            } else {
+                jPanelbotones.setVisible(false);
+                jButton_idborrar.setEnabled(false);
+                jPanel1.setVisible(true);
+                jTextFieldidmodi.setEnabled(false);
+                jTextFielddireccion.setEnabled(false);
+                jTextFieldContacto.setEnabled(false);
+                if(jLabelMarca.getText().equals("Farmacia") )
+                    jTextFielddireccion.setEnabled(true);
+                if( jLabelMarca.getText().equals("Laboratorio")){
+                    jTextFieldContacto.setEnabled(true);
+                    jTextFielddireccion.setEnabled(true);
+                }
+                
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (mongoClient != null) {
+                mongoClient.close();
+                System.out.println("Disconnected from MongoDB");
+            }
+        }
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jbuttonmodiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbuttonmodiActionPerformed
+        try{
+            if(!(jTextFieldmodnom.getText().isBlank() && jTextFieldmodid.getText().isBlank())){
+                if(jLabelMarca.getText().equals("Farmacia")){
+                    ArrayList<Integer> props = new ArrayList();
+                    ArrayList<Integer> farms = new ArrayList();
+                     int response;
+                    do {
+                        String nombreprop = JOptionPane.showInputDialog(jDialog_CrearFarmacia, "Ingrese nombre de propietario");
+                        String IDprop = JOptionPane.showInputDialog(jDialog_CrearFarmacia, "Ingrese ID de propietario");
+                        props.add(Integer.parseInt(IDprop));
+                        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+                        db = mongoClient.getDatabase("Farmacia");
+                        collection = db.getCollection("Propietario");
+                        Document proDoc = new Document("id", Integer.parseInt(IDprop)).append("nombre", nombreprop);
+                        collection.insertOne(proDoc); 
+
+                        response = JOptionPane.showConfirmDialog(jDialog_CrearFarmacia, "Desea agrear a otro propietario?", "Propietarios", JOptionPane.YES_NO_OPTION);
+
+                    } while (response == JOptionPane.YES_OPTION);
+                    //farmaceuticos
+                    do {
+                        String nombreprop = JOptionPane.showInputDialog(jDialog_CrearFarmacia, "Ingrese nombre de Farmaceutico");
+                        String IDprop = JOptionPane.showInputDialog(jDialog_CrearFarmacia, "Ingrese ID de Farmaceutico");
+                        farms.add(Integer.parseInt(IDprop));
+                        mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+                        db = mongoClient.getDatabase("Farmacia");
+                        collection = db.getCollection("Farmaceutico");
+                        Document pfroDoc = new Document("id", Integer.parseInt(IDprop)).append("nombre", nombreprop);
+                        collection.insertOne(pfroDoc);  
+                        response = JOptionPane.showConfirmDialog(jDialog_CrearFarmacia, "Desea agrear a otro farmaceutico?", "Farmaceutico", JOptionPane.YES_NO_OPTION);
+
+                    } while (response == JOptionPane.YES_OPTION);
+                    mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+                    db = mongoClient.getDatabase("Farmacia");
+                    collection = db.getCollection(jLabelMarca.getText());
+                    Document farmaciaDoc = new Document("id", Integer.parseInt(jTextFieldmodid.getText())).append("nombre", jTextFieldmodnom.getText()).append("direccion", jTextFielddireccion.getText()).append("Propietarios", props).append("Farmaceuticos",farms).append("productos",null);
+                    collection.insertOne(farmaciaDoc);
+                    int id=Integer.parseInt(jTextFieldidmodi.getText());
+                    Document filtro = new Document("id", id);
+                    collection.deleteOne(filtro);
+                }else if(jLabelMarca.getText().equals("Laboratorio")){
+                    mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+                    db = mongoClient.getDatabase("Farmacia");
+                    collection = db.getCollection(jLabelMarca.getText());
+                    Document pfroDoc = new Document("id", Integer.parseInt(jTextFieldmodid.getText())).append("nombre", jTextFieldmodnom.getText()).append("direccion", jTextFielddireccion.getText()).append("contacto", jTextFieldContacto.getText());
+                        
+                    collection.insertOne(pfroDoc);  
+                    int id=Integer.parseInt(jTextFieldidmodi.getText());
+                    Document filtro = new Document("id", id);
+                    collection.deleteOne(filtro);
+                }
+                else{
+                    mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+                    db = mongoClient.getDatabase("Farmacia");
+                    collection = db.getCollection(jLabelMarca.getText());
+                    Document pfroDoc = new Document("id", Integer.parseInt(jTextFieldmodid.getText())).append("nombre", jTextFieldmodnom.getText());
+                    collection.insertOne(pfroDoc);  
+                    int id=Integer.parseInt(jTextFieldidmodi.getText());
+                    Document filtro = new Document("id", id);
+                    collection.deleteOne(filtro);
+                }
+                jPanelbotones.setVisible(true);
+                JOptionPane.showMessageDialog(null, "Se ha modificado "+ jLabelMarca.getText());
+                jTextFielddireccion.setText("");
+                jTextFieldmodid.setText("");
+                jTextFieldmodnom.setText("");
+                jButton_idborrar.setEnabled(true);
+                jTextFieldidmodi.setEnabled(true);
+                jTextFieldidmodi.setText("");
+                jPanel1.setVisible(false);
+                jTextFieldContacto.setText("");
+                
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (mongoClient != null) {
+                mongoClient.close();
+                System.out.println("Disconnected from MongoDB");
+            }
+        }
+       
+    }//GEN-LAST:event_jbuttonmodiActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -1615,6 +2076,13 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1632,6 +2100,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton_CrearF4;
     private javax.swing.JButton jButton_Farmacia;
     private javax.swing.JButton jButton_Laboratorio;
+    private javax.swing.JButton jButton_idborrar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -1644,6 +2113,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog_LogInCliente;
     private javax.swing.JDialog jDialog_LogInFarmacia;
     private javax.swing.JDialog jDialog_LogInLaboratorio;
+    private javax.swing.JDialog jDialog_Master;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1674,16 +2144,30 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelMarca;
+    private javax.swing.JLabel jLabelmodid;
+    private javax.swing.JLabel jLabelmodnom;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelbotones;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextFieldContacto;
     private javax.swing.JTextField jTextField_ContactoL;
     private javax.swing.JTextField jTextField_CostoP;
     private javax.swing.JTextField jTextField_DirF1;
@@ -1704,6 +2188,12 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_NombreLogInL;
     private javax.swing.JTextField jTextField_NombreP;
     private javax.swing.JTextField jTextField_UnidadesP;
+    private javax.swing.JTextField jTextField_idborrar;
+    private javax.swing.JTextField jTextFielddireccion;
+    private javax.swing.JTextField jTextFieldidmodi;
+    private javax.swing.JTextField jTextFieldmodid;
+    private javax.swing.JTextField jTextFieldmodnom;
+    private javax.swing.JButton jbuttonmodi;
     // End of variables declaration//GEN-END:variables
  Conexion conectar = new Conexion("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
     ArrayList<Cliente> Clientes = new ArrayList<>();
@@ -1715,6 +2205,32 @@ public class main extends javax.swing.JFrame {
     private static MongoClient mongoClient;
     private static MongoDatabase db;
     private static MongoCollection<Document> collection;
+    
+    public void deleteMaster(){
+        try{
+            mongoClient = MongoClients.create("mongodb+srv://user:farmacias2024@cluster0.rjh38.mongodb.net/");
+            db = mongoClient.getDatabase("Farmacia");
+            collection = db.getCollection(jLabelMarca.getText());
+            System.out.println("Connected to MongoDB");
+            int id=Integer.parseInt(jTextField_idborrar.getText());
+            Document filtro = new Document("id", id);
+            long count = collection.countDocuments(filtro);
+            if (count == 0) {
+                JOptionPane.showMessageDialog(null,"No se encontró "+ jLabelMarca.getText()+" con el ID especificado.");
+            } else {
+                collection.deleteOne(filtro);
+                JOptionPane.showMessageDialog(null, "Se ha eliminado el "+ jLabelMarca.getText()+" "+jTextField_idborrar.getText());
+            }
+            jTextField_idborrar.setText("");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (mongoClient != null) {
+                mongoClient.close();
+                System.out.println("Disconnected from MongoDB");
+            }
+        }
+    }
      
     
 }
